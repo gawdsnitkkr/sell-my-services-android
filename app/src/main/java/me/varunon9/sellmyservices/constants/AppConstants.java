@@ -9,4 +9,6 @@ public class AppConstants {
     public static String accessLocationToastMessage =
             "Please grant location permission to use this service";
     public static String currentLocationMarket = "You are here";
+    public static String internetConnectionIsMandatory =
+            "Internet connection is mandatory.";
 }

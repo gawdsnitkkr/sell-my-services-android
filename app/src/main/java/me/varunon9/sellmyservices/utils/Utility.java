@@ -5,6 +5,8 @@ import android.content.pm.PackageManager;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -61,6 +63,17 @@ public class Utility {
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(
                     currentLocation, zoomLevel)
             );
+        }
+    }
+
+    public boolean isConnectedToNetwork() {
+        ConnectivityManager connectivityManager =
+                (ConnectivityManager) context.getSystemService(context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        if (networkInfo != null && networkInfo.isConnected()) {
+            return true;
+        } else {
+            return false;
         }
     }
 }
