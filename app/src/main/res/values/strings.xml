@@ -7,4 +7,10 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="title_search_text">What are you looking for?</string>
+
+    <string-array name="search_text_results_array">
+        <item>Freelancer</item>
+        <item>Cook</item>
+    </string-array>
 </resources>
