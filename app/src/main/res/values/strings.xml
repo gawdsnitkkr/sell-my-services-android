@@ -9,8 +9,9 @@
     <string name="action_settings">Settings</string>
     <string name="title_search_text">What are you looking for?</string>
 
-    <string-array name="search_text_results_array">
+    <string-array name="search_suggestions_array">
         <item>Freelancer</item>
         <item>Cook</item>
     </string-array>
+    <string name="title_activity_search">Search for Services</string>
 </resources>

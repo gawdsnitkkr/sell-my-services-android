@@ -1,6 +1,7 @@
 package me.varunon9.sellmyservices;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
@@ -16,6 +17,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.GoogleMap;
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements
     private GoogleMap mMap;
     private Utility utility;
     private LocationManager locationManager;
+    private TextView searchTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +65,8 @@ public class MainActivity extends AppCompatActivity implements
             Snackbar.make(mapView, AppConstants.internetConnectionIsMandatory, Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
         }
+
+        searchTextView = (TextView) findViewById(R.id.searchTextView);
     }
 
     @Override
@@ -170,5 +175,10 @@ public class MainActivity extends AppCompatActivity implements
                 return;
             }
         }
+    }
+
+    public void goToSearchActivity(View view) {
+        Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+        startActivity(intent);
     }
 }
