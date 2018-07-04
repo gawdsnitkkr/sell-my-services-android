@@ -11,4 +11,5 @@ public class AppConstants {
     public static String currentLocationMarket = "You are here";
     public static String internetConnectionIsMandatory =
             "Internet connection is mandatory.";
+    public static String databaseName = "SellMyServices.db";
 }
