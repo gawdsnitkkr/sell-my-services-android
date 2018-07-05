@@ -8,20 +8,26 @@ import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+
 /**
  * Created by varunkumar on 30/6/18.
+ *
+ * This Utility class needs context
  */
 
-public class Utility {
+public class ContextUtility {
     private Context context;
 
-    public Utility(Context context) {
+    public ContextUtility(Context context) {
         this.context = context;
     }
 
@@ -75,5 +81,14 @@ public class Utility {
         } else {
             return false;
         }
+    }
+
+    public void populateListView(ListView listView, ArrayList<String> list) {
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+                context,
+                android.R.layout.simple_list_item_1,
+                list
+        );
+        listView.setAdapter(arrayAdapter);
     }
 }

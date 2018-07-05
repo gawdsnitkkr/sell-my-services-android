@@ -25,13 +25,13 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 
 import me.varunon9.sellmyservices.constants.AppConstants;
-import me.varunon9.sellmyservices.utils.Utility;
+import me.varunon9.sellmyservices.utils.ContextUtility;
 
 public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private Utility utility;
+    private ContextUtility contextUtility;
     private LocationManager locationManager;
     private TextView searchTextView;
 
@@ -57,11 +57,11 @@ public class MainActivity extends AppCompatActivity implements
         mapFragment.getMapAsync(this);
 
 
-        utility = new Utility(this);
+        contextUtility = new ContextUtility(this);
         locationManager = (LocationManager) getSystemService(this.LOCATION_SERVICE);
 
         // check if internet connection is available
-        if (!utility.isConnectedToNetwork()) {
+        if (!contextUtility.isConnectedToNetwork()) {
             Snackbar.make(mapView, AppConstants.internetConnectionIsMandatory, Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
         }
@@ -129,10 +129,10 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onMapReady(GoogleMap googleMap) {
         Location location = null;
-        if (utility.isBuildVersionGreaterEqualToMarshmallow()) {
-            if (utility.isPermissionGranted(Manifest.permission.ACCESS_FINE_LOCATION)) {
+        if (contextUtility.isBuildVersionGreaterEqualToMarshmallow()) {
+            if (contextUtility.isPermissionGranted(Manifest.permission.ACCESS_FINE_LOCATION)) {
                 // show the user his current location
-                location = utility.getCurrentLocation(locationManager);
+                location = contextUtility.getCurrentLocation(locationManager);
             } else {
                 // request for location permission
                 ActivityCompat.requestPermissions(this, new String[] {
@@ -141,11 +141,11 @@ public class MainActivity extends AppCompatActivity implements
             }
         } else {
             // show the user his current location
-            location = utility.getCurrentLocation(locationManager);
+            location = contextUtility.getCurrentLocation(locationManager);
         }
 
         mMap = googleMap;
-        utility.showLocationOnMap(mMap, location, AppConstants.currentLocationMarket,
+        contextUtility.showLocationOnMap(mMap, location, AppConstants.currentLocationMarket,
                 true);
     }
 
@@ -163,9 +163,9 @@ public class MainActivity extends AppCompatActivity implements
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     // permission was granted, show user his current location
-                    Location location = utility.getCurrentLocation(locationManager);
+                    Location location = contextUtility.getCurrentLocation(locationManager);
                     mMap.clear(); // clear initial marker
-                    utility.showLocationOnMap(mMap, location, AppConstants.currentLocationMarket,
+                    contextUtility.showLocationOnMap(mMap, location, AppConstants.currentLocationMarket,
                             true);
                 } else {
                     // permission denied, show user toast notification

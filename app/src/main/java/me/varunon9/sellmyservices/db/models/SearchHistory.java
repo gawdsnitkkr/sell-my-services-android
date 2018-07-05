@@ -8,9 +8,10 @@ public class SearchHistory {
 
     int id;
     String searchText;
-    long timestamp;
+    long createdAt;
 
     public SearchHistory() {
+
     }
 
     public int getId() {
@@ -29,11 +30,11 @@ public class SearchHistory {
         this.searchText = searchText;
     }
 
-    public long getTimestamp() {
-        return timestamp;
+    public long getCreatedAt() {
+        return createdAt;
     }
 
-    public void setTimestamp(long timestamp) {
-        this.timestamp = timestamp;
+    public void setCreatedAt(long createdAt) {
+        this.createdAt = createdAt;
     }
 }
