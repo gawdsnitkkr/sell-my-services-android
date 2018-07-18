@@ -3,7 +3,10 @@ package me.varunon9.sellmyservices;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +27,8 @@ public class SearchActivity extends AppCompatActivity {
 
         // declare all local variables here
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        final EditText searchServicesEditText =
+                (EditText) findViewById(R.id.searchServicesEditText);
 
         setSupportActionBar(toolbar);
 
@@ -34,11 +39,23 @@ public class SearchActivity extends AppCompatActivity {
         contextUtility = new ContextUtility(this);
 
         populateSearchHistoryListView(dbHelper);
+        /*searchServicesEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int keyCode, KeyEvent keyEvent) {
+                if (keyEvent.getAction() == KeyEvent.ACTION_DOWN
+                        && keyCode == KeyEvent.KEYCODE_ENTER) {
+                    String searchText = searchServicesEditText.getText().toString();
+                    searchServices(searchText);
+                    return true;
+                }
+                return false;
+            }
+        });*/
 
     }
 
     @Override
-    public boolean onSupportNavigateUp(){
+    public boolean onSupportNavigateUp() {
         finish();
         return true;
     }
@@ -60,6 +77,12 @@ public class SearchActivity extends AppCompatActivity {
 
         // populate the searchHistoryListView from sqlite db
         contextUtility.populateListView(searchHistoryListView, searchHistoryTextArrayList);
+
+        // todo: add click listener to search
+    }
+
+    private void searchServices(String searchText) {
+        System.out.println(searchText);
     }
 
 }

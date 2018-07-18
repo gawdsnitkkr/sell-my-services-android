@@ -32,17 +32,8 @@
             android:background="@drawable/search_text_border"
             android:inputType="textPersonName"
             android:hint="@string/title_search_text"
-            android:drawableRight="@drawable/search_text_icon"
+            android:drawableRight="@android:drawable/ic_menu_search"
             android:gravity="fill" />
-
-        <ListView
-            android:id="@+id/searchResultsListView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:background="@drawable/search_text_border"
-            android:entries="@array/search_suggestions_array" />
 
         <ListView
             android:id="@+id/searchHistoryListView"
