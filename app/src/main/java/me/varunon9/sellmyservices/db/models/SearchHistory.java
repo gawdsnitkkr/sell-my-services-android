@@ -11,7 +11,7 @@ public class SearchHistory {
     long createdAt;
 
     public SearchHistory() {
-
+        this.createdAt = System.currentTimeMillis();
     }
 
     public int getId() {

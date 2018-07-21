@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
+import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -39,18 +41,18 @@ public class SearchActivity extends AppCompatActivity {
         contextUtility = new ContextUtility(this);
 
         populateSearchHistoryListView(dbHelper);
-        /*searchServicesEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        searchServicesEditText.setOnKeyListener(new View.OnKeyListener() {
             @Override
-            public boolean onEditorAction(TextView textView, int keyCode, KeyEvent keyEvent) {
+            public boolean onKey(View view, int actionId, KeyEvent keyEvent) {
                 if (keyEvent.getAction() == KeyEvent.ACTION_DOWN
-                        && keyCode == KeyEvent.KEYCODE_ENTER) {
+                        && keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
                     String searchText = searchServicesEditText.getText().toString();
                     searchServices(searchText);
                     return true;
                 }
                 return false;
             }
-        });*/
+        });
 
     }
 
@@ -82,7 +84,11 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void searchServices(String searchText) {
-        System.out.println(searchText);
+        // todo: search text
+        // todo: save searchText after fetching results from server (when not empty)
+        SearchHistory searchHistory = new SearchHistory();
+        searchHistory.setSearchText(searchText);
+        dbHelper.createSearchHistory(searchHistory);
     }
 
 }

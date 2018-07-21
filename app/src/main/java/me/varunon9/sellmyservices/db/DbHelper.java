@@ -89,6 +89,7 @@ public class DbHelper extends SQLiteOpenHelper {
         long searchHistoryId = db.insert(TABLE_SEARCH_HISTORY, null, values);
 
         db.close();
+        Log.d(LOG, "creating search history: " + searchHistory.getSearchText());
         return searchHistoryId;
     }
 

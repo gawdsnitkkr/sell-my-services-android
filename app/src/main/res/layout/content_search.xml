@@ -30,9 +30,10 @@
             android:ems="10"
             android:padding="@dimen/activity_horizontal_margin"
             android:background="@drawable/search_text_border"
-            android:inputType="textPersonName"
+            android:inputType="text"
             android:hint="@string/title_search_text"
             android:drawableRight="@android:drawable/ic_menu_search"
+            android:imeOptions="actionSearch"
             android:gravity="fill" />
 
         <ListView
