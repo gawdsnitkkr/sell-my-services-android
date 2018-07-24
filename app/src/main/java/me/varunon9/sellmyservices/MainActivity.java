@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements
 
         // check if internet connection is available
         if (!contextUtility.isConnectedToNetwork()) {
-            Snackbar.make(mapView, AppConstants.internetConnectionIsMandatory, Snackbar.LENGTH_LONG)
+            Snackbar.make(mapView, AppConstants.INTERNET_CONNECTION_IS_MANDATORY, Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
         }
 
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements
                 // request for location permission
                 ActivityCompat.requestPermissions(this, new String[] {
                         Manifest.permission.ACCESS_FINE_LOCATION
-                }, AppConstants.accessLocationRequestCode);
+                }, AppConstants.ACCESS_LOCATION_REQUEST_CODE);
             }
         } else {
             // show the user his current location
@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity implements
         }
 
         mMap = googleMap;
-        contextUtility.showLocationOnMap(mMap, location, AppConstants.currentLocationMarket,
+        contextUtility.showLocationOnMap(mMap, location, AppConstants.CURRENT_LOCATION_MARKER,
                 true);
     }
 
@@ -159,17 +159,17 @@ public class MainActivity extends AppCompatActivity implements
                                            String permissions[],
                                            int[] grantResults) {
         switch (requestCode) {
-            case AppConstants.accessLocationRequestCode: {
+            case AppConstants.ACCESS_LOCATION_REQUEST_CODE: {
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     // permission was granted, show user his current location
                     Location location = contextUtility.getCurrentLocation(locationManager);
                     mMap.clear(); // clear initial marker
-                    contextUtility.showLocationOnMap(mMap, location, AppConstants.currentLocationMarket,
+                    contextUtility.showLocationOnMap(mMap, location, AppConstants.CURRENT_LOCATION_MARKER,
                             true);
                 } else {
                     // permission denied, show user toast notification
-                    Toast.makeText(this, AppConstants.accessLocationToastMessage,
+                    Toast.makeText(this, AppConstants.ACCESS_LOCATION_TOAST_MESSAGE,
                             Toast.LENGTH_LONG).show();
                 }
                 return;
