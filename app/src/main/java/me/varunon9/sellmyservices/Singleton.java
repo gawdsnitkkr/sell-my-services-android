@@ -1,6 +1,9 @@
 package me.varunon9.sellmyservices;
 
 import android.content.Context;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
@@ -13,6 +16,7 @@ public class Singleton {
     private static Singleton singleton;
     private RequestQueue requestQueue;
     private Context context;
+    private LocationManager locationManager;
 
     private Singleton(Context context) {
         this.context = context;
@@ -31,5 +35,22 @@ public class Singleton {
             requestQueue = Volley.newRequestQueue(context);
         }
         return requestQueue;
+    }
+
+    public Location getCurrentLocation()
+            throws SecurityException {
+        if (locationManager == null) {
+            locationManager =
+                    (LocationManager) context.getSystemService(context.LOCATION_SERVICE);
+        }
+        Criteria criteria = new Criteria();
+        Location location = locationManager.getLastKnownLocation(
+                locationManager.getBestProvider(criteria, false)
+        );
+        return location;
+    }
+
+    public void showProgressDialog() {
+
     }
 }

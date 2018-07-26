@@ -24,6 +24,8 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 
+import org.json.JSONArray;
+
 import me.varunon9.sellmyservices.constants.AppConstants;
 import me.varunon9.sellmyservices.utils.ContextUtility;
 
@@ -124,6 +126,24 @@ public class MainActivity extends AppCompatActivity implements
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        if (bundle != null) {
+            String sellersString = bundle.getString(AppConstants.SELLER);
+            try {
+                if (sellersString != null) {
+                    JSONArray sellers = new JSONArray(sellersString);
+                    // todo: show sellers on map
+                }
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override

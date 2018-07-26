@@ -16,6 +16,9 @@ public final class AppConstants {
     public static final String INTERNET_CONNECTION_IS_MANDATORY =
             "Internet connection is mandatory.";
     public static final String DATABASE_NAME = "sellMyServices.db";
+    public static final String SERVER_SIDE_ERROR_MESSAGE =
+            "Server side error occurred.";
+    public static final String SELLER = "seller";
 
     public static class Urls {
         private Urls() {

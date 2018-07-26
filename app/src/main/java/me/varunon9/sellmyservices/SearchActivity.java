@@ -1,23 +1,29 @@
 package me.varunon9.sellmyservices;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.android.volley.VolleyError;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static me.varunon9.sellmyservices.constants.AppConstants.Urls;
+
+import me.varunon9.sellmyservices.constants.AppConstants;
 import me.varunon9.sellmyservices.db.DbHelper;
 import me.varunon9.sellmyservices.db.models.SearchHistory;
 import me.varunon9.sellmyservices.utils.AjaxCallback;
@@ -29,6 +35,8 @@ public class SearchActivity extends AppCompatActivity {
     DbHelper dbHelper;
     ContextUtility contextUtility;
     AjaxUtility ajaxUtility;
+    Singleton singleton;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +56,7 @@ public class SearchActivity extends AppCompatActivity {
         dbHelper = new DbHelper(this);
         contextUtility = new ContextUtility(this);
         ajaxUtility = new AjaxUtility(getApplicationContext());
+        singleton = Singleton.getInstance(getApplicationContext());
 
         populateSearchHistoryListView(dbHelper);
         searchServicesEditText.setOnKeyListener(new View.OnKeyListener() {
@@ -56,7 +65,7 @@ public class SearchActivity extends AppCompatActivity {
                 if (keyEvent.getAction() == KeyEvent.ACTION_DOWN
                         && keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
                     String searchText = searchServicesEditText.getText().toString();
-                    searchServices(searchText);
+                    searchServices(searchText, false);
                     return true;
                 }
                 return false;
@@ -90,25 +99,54 @@ public class SearchActivity extends AppCompatActivity {
         contextUtility.populateListView(searchHistoryListView, searchHistoryTextArrayList);
 
         // todo: add click listener to search
+        searchHistoryListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                String searchText = (String) adapterView.getItemAtPosition(position);
+                searchServices(searchText, true);
+            }
+        });
     }
 
-    private void searchServices(final String searchText) {
+    private void searchServices(final String searchText, final boolean fromSearchHistory) {
         try {
             JSONObject body = new JSONObject();
             String url = Urls.SEARCH_SELLERS;
-            body.put("latitude", 0);
-            body.put("longitude", 0);
+            Location location = singleton.getCurrentLocation();
+            body.put("latitude", location.getLatitude());
+            body.put("longitude", location.getLongitude());
             body.put("searchText", searchText);
+            showProgressDialog("Loading", "Please wait", false);
             ajaxUtility.makePostRequest(url, body, new AjaxCallback() {
                 @Override
                 public void onSuccess(String response) {
+                    dismissProgressDialog();
                     try {
                         JSONObject responseJson = new JSONObject(response);
                         if (responseJson.getBoolean("success")) {
-                            // saving search text to sqlite db
-                            SearchHistory searchHistory = new SearchHistory();
-                            searchHistory.setSearchText(searchText);
-                            dbHelper.createSearchHistory(searchHistory);
+                            JSONArray result = responseJson.getJSONArray("result");
+                            if (result.length() > 0) {
+                                // saving search text to sqlite db
+                                if (!fromSearchHistory) {
+                                    SearchHistory searchHistory = new SearchHistory();
+                                    searchHistory.setSearchText(searchText);
+                                    dbHelper.createSearchHistory(searchHistory);
+                                }
+
+                                // go to MainActivity and show sellers on map
+                                Intent intent = new Intent(SearchActivity.this, MainActivity.class);
+                                Bundle args = new Bundle();
+                                args.putString(AppConstants.SELLER, result.toString());
+                                intent.putExtras(args);
+                                startActivity(intent);
+                            } else {
+                                showMessage("No sellers found");
+                            }
+                        } else {
+                            String message = responseJson.getString("message");
+                            if (message != null) {
+                                showMessage(message);
+                            }
                         }
                     } catch(Exception e) {
                         e.printStackTrace();
@@ -117,12 +155,34 @@ public class SearchActivity extends AppCompatActivity {
 
                 @Override
                 public void onError(VolleyError error) {
-
+                    dismissProgressDialog();
+                    showMessage(AppConstants.SERVER_SIDE_ERROR_MESSAGE);
                 }
             });
         } catch(Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void showProgressDialog(String title, String message, boolean isCancellable) {
+        if (progressDialog == null) {
+            progressDialog = new ProgressDialog(SearchActivity.this);
+        }
+        progressDialog.setTitle(title);
+        progressDialog.setMessage(message);
+        progressDialog.setCancelable(isCancellable);
+        progressDialog.show();
+    }
+
+    private void dismissProgressDialog() {
+        if (progressDialog != null) {
+            progressDialog.dismiss();
+        }
+    }
+
+    private void showMessage(String message) {
+        View parentLayout = findViewById(R.id.searchActivityContent);
+        Snackbar.make(parentLayout, message, Snackbar.LENGTH_LONG).show();
     }
 
 }
