@@ -8,6 +8,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -23,8 +24,10 @@ import android.widget.Toast;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import me.varunon9.sellmyservices.constants.AppConstants;
 import me.varunon9.sellmyservices.utils.ContextUtility;
@@ -36,10 +39,12 @@ public class MainActivity extends AppCompatActivity implements
     private ContextUtility contextUtility;
     private LocationManager locationManager;
     private TextView searchTextView;
+    private static final String LOG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(LOG, "onCreate called");
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -131,23 +136,19 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onResume() {
         super.onResume();
-        Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
-        if (bundle != null) {
-            String sellersString = bundle.getString(AppConstants.SELLER);
-            try {
-                if (sellersString != null) {
-                    JSONArray sellers = new JSONArray(sellersString);
-                    // todo: show sellers on map
-                }
-            } catch(Exception e) {
-                e.printStackTrace();
-            }
-        }
+        Log.d(LOG, "onResume called");
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+        Log.d(LOG, "onMapReady called");
+        mMap = googleMap;
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        if (bundle != null) {
+            showSellersOnMap(bundle);
+            return;
+        }
         Location location = null;
         if (contextUtility.isBuildVersionGreaterEqualToMarshmallow()) {
             if (contextUtility.isPermissionGranted(Manifest.permission.ACCESS_FINE_LOCATION)) {
@@ -164,9 +165,8 @@ public class MainActivity extends AppCompatActivity implements
             location = contextUtility.getCurrentLocation(locationManager);
         }
 
-        mMap = googleMap;
         contextUtility.showLocationOnMap(mMap, location, AppConstants.CURRENT_LOCATION_MARKER,
-                true);
+                true, 15);
     }
 
     @Override
@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity implements
                     Location location = contextUtility.getCurrentLocation(locationManager);
                     mMap.clear(); // clear initial marker
                     contextUtility.showLocationOnMap(mMap, location, AppConstants.CURRENT_LOCATION_MARKER,
-                            true);
+                            true, 15);
                 } else {
                     // permission denied, show user toast notification
                     Toast.makeText(this, AppConstants.ACCESS_LOCATION_TOAST_MESSAGE,
@@ -197,8 +197,33 @@ public class MainActivity extends AppCompatActivity implements
         }
     }
 
+    // calling from XML hence public
     public void goToSearchActivity(View view) {
         Intent intent = new Intent(MainActivity.this, SearchActivity.class);
         startActivity(intent);
+    }
+
+    private void showSellersOnMap(Bundle bundle) {
+        String sellersString = bundle.getString(AppConstants.SELLER);
+        try {
+            if (sellersString != null) {
+                JSONArray sellers = new JSONArray(sellersString);
+
+                // clearing previous sellers and showing latest
+                mMap.clear();
+                for (int i = 0; i < sellers.length(); i++) {
+                    JSONObject seller = sellers.getJSONObject(i);
+                    double latitude = seller.getDouble("latitude");
+                    double longitude = seller.getDouble("longitude");
+                    String name = seller.getString("name");
+                    Location sellerLocation = new Location(LocationManager.GPS_PROVIDER);
+                    sellerLocation.setLatitude(latitude);
+                    sellerLocation.setLongitude(longitude);
+                    contextUtility.showLocationOnMap(mMap, sellerLocation, name, true, 10);
+                }
+            }
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 }

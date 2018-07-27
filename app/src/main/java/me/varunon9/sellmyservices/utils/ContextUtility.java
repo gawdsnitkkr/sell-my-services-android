@@ -54,11 +54,19 @@ public class ContextUtility {
         return location;
     }
 
+    /**
+     * zoom level range-
+     *
+     * 1: World
+     * 5: Landmass/continent
+     * 10: City
+     * 15: Streets
+     * 20: Buildings
+     */
     public void showLocationOnMap(GoogleMap googleMap, Location location,
-                                  String marker, boolean moveCamera) {
+                                  String marker, boolean moveCamera, float zoomLevel) {
         // default location: Bangalore
         LatLng currentLocation = new LatLng(12.97, 77.6);
-        float zoomLevel = 15; // streets view
 
         if (location != null) {
             currentLocation = new LatLng(location.getLatitude(),
@@ -66,7 +74,6 @@ public class ContextUtility {
         }
         googleMap.addMarker(new MarkerOptions().position(currentLocation)
                 .title(marker));
-
         if (moveCamera) {
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(
                     currentLocation, zoomLevel)
