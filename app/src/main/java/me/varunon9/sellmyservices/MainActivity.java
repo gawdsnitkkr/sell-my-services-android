@@ -114,17 +114,17 @@ public class MainActivity extends AppCompatActivity implements
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_user_profile) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_seller_login) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_seller_signup) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_settings) {
 
         } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_rate) {
 
         }
 
@@ -146,8 +146,11 @@ public class MainActivity extends AppCompatActivity implements
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         if (bundle != null) {
-            showSellersOnMap(bundle);
-            return;
+            String sellersString = bundle.getString(AppConstants.SELLER);
+            if (sellersString != null) {
+                showSellersOnMap(bundle, sellersString);
+                return;
+            }
         }
         Location location = null;
         if (contextUtility.isBuildVersionGreaterEqualToMarshmallow()) {
@@ -203,8 +206,7 @@ public class MainActivity extends AppCompatActivity implements
         startActivity(intent);
     }
 
-    private void showSellersOnMap(Bundle bundle) {
-        String sellersString = bundle.getString(AppConstants.SELLER);
+    private void showSellersOnMap(Bundle bundle, String sellersString) {
         try {
             if (sellersString != null) {
                 JSONArray sellers = new JSONArray(sellersString);

@@ -119,12 +119,12 @@ public class SearchActivity extends AppCompatActivity {
             showProgressDialog("Loading", "Please wait", false);
             ajaxUtility.makePostRequest(url, body, new AjaxCallback() {
                 @Override
-                public void onSuccess(String response) {
+                public void onSuccess(JSONObject response) {
                     dismissProgressDialog();
                     try {
-                        JSONObject responseJson = new JSONObject(response);
-                        if (responseJson.getBoolean("success")) {
-                            JSONArray result = responseJson.getJSONArray("result");
+                        // todo: use response status code instead to check success (backend need to be changed too)
+                        if (response.getBoolean("success")) {
+                            JSONArray result = response.getJSONArray("result");
                             if (result.length() > 0) {
                                 // saving search text to sqlite db
                                 if (!fromSearchHistory) {
@@ -143,7 +143,7 @@ public class SearchActivity extends AppCompatActivity {
                                 showMessage("No sellers found");
                             }
                         } else {
-                            String message = responseJson.getString("message");
+                            String message = response.getString("message");
                             if (message != null) {
                                 showMessage(message);
                             }

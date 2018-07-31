@@ -7,6 +7,7 @@ import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONObject;
@@ -28,13 +29,13 @@ public class AjaxUtility {
     }
 
     public void makePostRequest(String url, JSONObject body, final AjaxCallback ajaxCallback) {
-        final String requestBody = body.toString();
         try {
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-                    new Response.Listener<String>() {
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
+                    url, body, new Response.Listener<JSONObject>() {
+
                 @Override
-                public void onResponse(String response) {
-                    Log.d(LOG, response);
+                public void onResponse(JSONObject response) {
+                    Log.d(LOG, response.toString());
                     ajaxCallback.onSuccess(response);
                 }
             }, new Response.ErrorListener() {
@@ -43,24 +44,8 @@ public class AjaxUtility {
                     Log.e(LOG, error.toString());
                     ajaxCallback.onError(error);
                 }
-            }){
-                @Override
-                public String getBodyContentType() {
-                    return "application/json; charset=utf-8";
-                }
-
-                @Override
-                public byte[] getBody() throws AuthFailureError {
-                    try {
-                        return requestBody == null ?
-                                null : requestBody.getBytes("utf-8");
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        return null;
-                    }
-                }
-            };
-            singleton.getRequestQueue().add(stringRequest);
+            });
+            singleton.getRequestQueue().add(jsonObjectRequest);
         } catch(Exception e) {
             Log.d(LOG, "Exception makePostRequest");
             e.printStackTrace();
