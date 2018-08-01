@@ -19,6 +19,7 @@ public final class AppConstants {
     public static final String SERVER_SIDE_ERROR_MESSAGE =
             "Server side error occurred.";
     public static final String SELLER = "seller";
+    public static final String NAVIGATION_ITEM = "navigationItem";
 
     public static class Urls {
         private Urls() {

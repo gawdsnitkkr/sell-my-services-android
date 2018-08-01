@@ -21,10 +21,14 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -33,7 +37,8 @@ import me.varunon9.sellmyservices.constants.AppConstants;
 import me.varunon9.sellmyservices.utils.ContextUtility;
 
 public class MainActivity extends AppCompatActivity implements
-        NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback {
+        NavigationView.OnNavigationItemSelectedListener,
+        OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
     private GoogleMap mMap;
     private ContextUtility contextUtility;
@@ -113,21 +118,11 @@ public class MainActivity extends AppCompatActivity implements
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
-        if (id == R.id.nav_user_profile) {
-            // Handle the camera action
-        } else if (id == R.id.nav_seller_login) {
-
-        } else if (id == R.id.nav_seller_signup) {
-
-        } else if (id == R.id.nav_settings) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_rate) {
-
-        }
-
+        Intent intent = new Intent(MainActivity.this, UiFragmentActivity.class);
+        Bundle args = new Bundle();
+        args.putInt(AppConstants.NAVIGATION_ITEM, id);
+        intent.putExtras(args);
+        startActivity(intent);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
@@ -145,6 +140,7 @@ public class MainActivity extends AppCompatActivity implements
         mMap = googleMap;
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
+        mMap.setOnMarkerClickListener(this);
         if (bundle != null) {
             String sellersString = bundle.getString(AppConstants.SELLER);
             if (sellersString != null) {
@@ -218,14 +214,27 @@ public class MainActivity extends AppCompatActivity implements
                     double latitude = seller.getDouble("latitude");
                     double longitude = seller.getDouble("longitude");
                     String name = seller.getString("name");
-                    Location sellerLocation = new Location(LocationManager.GPS_PROVIDER);
-                    sellerLocation.setLatitude(latitude);
-                    sellerLocation.setLongitude(longitude);
-                    contextUtility.showLocationOnMap(mMap, sellerLocation, name, true, 10);
+                    LatLng sellerLatlng = new LatLng(latitude, longitude);
+                    JSONObject service = seller.getJSONArray("services").getJSONObject(0);
+                    mMap.addMarker(new MarkerOptions().position(sellerLatlng)
+                            .title(name)
+                            .snippet(service.getString("name"))
+                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.search_text_icon)));
+
+                    // animate in last
+                    if (i == (sellers.length() - 1)) {
+                        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sellerLatlng, 10));
+                    }
                 }
             }
         } catch(Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        Log.d(LOG, marker.getTitle() + " clicked");
+        return false;
     }
 }
