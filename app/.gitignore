@@ -1,4 +1,5 @@
-/build
+/build/*
 
 # not ignoring apk
-!/build/outputs/apk/debug/app-debug.apk 
+!/build/outputs
+!/build/outputs/apk/debug/app-debug.apk
