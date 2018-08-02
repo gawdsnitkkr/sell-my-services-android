@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 
 import me.varunon9.sellmyservices.constants.AppConstants;
+import me.varunon9.sellmyservices.uifragments.AboutUsFragment;
 
 /**
  * This activity  displays various UI fragments when called from navigation drawer
@@ -61,20 +62,25 @@ public class UiFragmentActivity extends AppCompatActivity {
 
     private Fragment getSelectedFragment(int id) {
         Fragment fragment = null;
+        String title = "";
         if (id == R.id.nav_user_profile) {
-            // Handle the camera action
+            title = AppConstants.YOUR_PROFILE;
         } else if (id == R.id.nav_seller_login) {
-
+            title = AppConstants.LOGIN_AS_SELLER;
         } else if (id == R.id.nav_seller_signup) {
-
-        } else if (id == R.id.nav_settings) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_rate) {
-
+            title = AppConstants.SIGNUP_AS_SELLER;
+        } else if (id == R.id.nav_about_us) {
+            title = AppConstants.ABOUT_US;
+            fragment = new AboutUsFragment();
         }
+        updateActionBarTitle(title);
         return fragment;
+    }
+
+    private void updateActionBarTitle(String title) {
+        if (title != null) {
+            getSupportActionBar().setTitle(title);
+        }
     }
 
 }

@@ -11,4 +11,12 @@ services. These services then can be searched by seekers in their nearby locatio
 4. Seekers search services on our platform.
 5. SellMyServices list all the nearby sellers who are offering services searched by seeker. 
 6. Seeker then can browser seller's services, their ratings, location etc and if interested can directly chat to sellers.
-7. After availing a service, a seeker can share feedbacks and rating to corresponding seller on our platform.
+7. After availing a service, a seeker can share feedback and rating to corresponding seller on our platform.
+
+
+#### Screenshots
+
+|  |  |
+| --- | --- |
+|![MainActivity](./screenshots/main-activity.png) | ![NavigationDrawer](./screenshots/navigation-drawer.png)|
+|![SearchActivity](./screenshots/search-activity.png) | ![AboutUs](./screenshots/about-us.png)|

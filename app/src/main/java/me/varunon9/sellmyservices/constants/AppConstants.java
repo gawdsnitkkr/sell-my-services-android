@@ -20,6 +20,11 @@ public final class AppConstants {
             "Server side error occurred.";
     public static final String SELLER = "seller";
     public static final String NAVIGATION_ITEM = "navigationItem";
+    public static final String YOUR_PROFILE = "Your Profile";
+    public static final String LOGIN_AS_SELLER = "Login as Seller";
+    public static final String SIGNUP_AS_SELLER = "Signup as Seller";
+    public static final String SETTINGS = "Settings";
+    public static final String ABOUT_US = "About Us";
 
     public static class Urls {
         private Urls() {

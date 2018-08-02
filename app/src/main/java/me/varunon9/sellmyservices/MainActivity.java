@@ -118,13 +118,17 @@ public class MainActivity extends AppCompatActivity implements
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        Intent intent = new Intent(MainActivity.this, UiFragmentActivity.class);
-        Bundle args = new Bundle();
-        args.putInt(AppConstants.NAVIGATION_ITEM, id);
-        intent.putExtras(args);
-        startActivity(intent);
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+        if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_rate) {
+        } else {
+            Intent intent = new Intent(MainActivity.this, UiFragmentActivity.class);
+            Bundle args = new Bundle();
+            args.putInt(AppConstants.NAVIGATION_ITEM, id);
+            intent.putExtras(args);
+            startActivity(intent);
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
+        }
         return true;
     }
 
