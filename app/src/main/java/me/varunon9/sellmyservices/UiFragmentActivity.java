@@ -2,8 +2,6 @@ package me.varunon9.sellmyservices;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +11,8 @@ import android.view.View;
 
 import me.varunon9.sellmyservices.constants.AppConstants;
 import me.varunon9.sellmyservices.uifragments.AboutUsFragment;
+import me.varunon9.sellmyservices.uifragments.LoginAsSellerFragment;
+import me.varunon9.sellmyservices.uifragments.SignupAsSellerFragment;
 
 /**
  * This activity  displays various UI fragments when called from navigation drawer
@@ -67,8 +67,10 @@ public class UiFragmentActivity extends AppCompatActivity {
             title = AppConstants.YOUR_PROFILE;
         } else if (id == R.id.nav_seller_login) {
             title = AppConstants.LOGIN_AS_SELLER;
+            fragment = new LoginAsSellerFragment();
         } else if (id == R.id.nav_seller_signup) {
             title = AppConstants.SIGNUP_AS_SELLER;
+            fragment = new SignupAsSellerFragment();
         } else if (id == R.id.nav_about_us) {
             title = AppConstants.ABOUT_US;
             fragment = new AboutUsFragment();
@@ -81,6 +83,28 @@ public class UiFragmentActivity extends AppCompatActivity {
         if (title != null) {
             getSupportActionBar().setTitle(title);
         }
+    }
+
+    // calling from XML
+    public void goToSignupAsSellerFragment(View view) {
+        Fragment fragment = new SignupAsSellerFragment();
+        String title = AppConstants.SIGNUP_AS_SELLER;
+        updateActionBarTitle(title);
+        replaceOldFragment(fragment);
+    }
+
+    public void goToLoginAsSellerFragment(View view) {
+        Fragment fragment = new LoginAsSellerFragment();
+        String title = AppConstants.LOGIN_AS_SELLER;
+        updateActionBarTitle(title);
+        replaceOldFragment(fragment);
+    }
+
+    private void replaceOldFragment(Fragment newFragment) {
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager()
+                .beginTransaction();
+        fragmentTransaction.replace(R.id.frameLayout, newFragment);
+        fragmentTransaction.commit();
     }
 
 }
