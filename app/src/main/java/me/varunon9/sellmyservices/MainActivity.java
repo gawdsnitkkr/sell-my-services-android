@@ -45,13 +45,13 @@ public class MainActivity extends AppCompatActivity implements
     private ContextUtility contextUtility;
     private LocationManager locationManager;
     private TextView searchTextView;
-    private static final String LOG = "MainActivity";
+    private static final String TAG = "MainActivity";
     private Singleton singleton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(LOG, "onCreate called");
+        Log.d(TAG, "onCreate called");
         setContentView(R.layout.activity_main);
 
         singleton = Singleton.getInstance(getApplicationContext());
@@ -144,12 +144,12 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onResume() {
         super.onResume();
-        Log.d(LOG, "onResume called");
+        Log.d(TAG, "onResume called");
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        Log.d(LOG, "onMapReady called");
+        Log.d(TAG, "onMapReady called");
         mMap = googleMap;
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -247,7 +247,7 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public boolean onMarkerClick(Marker marker) {
-        Log.d(LOG, marker.getTitle() + " clicked");
+        Log.d(TAG, marker.getTitle() + " clicked");
         return false;
     }
 

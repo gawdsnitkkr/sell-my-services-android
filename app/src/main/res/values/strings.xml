@@ -20,9 +20,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="no_account_signup">No account yet? Create one</string>
     <string name="already_account_login">Already have an account? Login</string>
-    <string name="title_activity_seller">SellerActivity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
-    <string name="tab_text_3">Tab 3</string>
-    <string name="section_format">Hello World from section: %1$d</string>
+
+    <string name="server_client_id">
+        283217089830-u2vrggeku555vel7m4rs3akk4lop045r.apps.googleusercontent.com
+    </string>
 </resources>

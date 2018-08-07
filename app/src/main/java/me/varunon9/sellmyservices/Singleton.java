@@ -26,7 +26,7 @@ public class Singleton {
     private JSONObject loginDetails;
     private SharedPreferences sharedPreferences;
     private String LOGIN_DETAILS = "loginDetails";
-    private String LOG = "Singleton";
+    private String TAG = "Singleton";
 
     private Singleton(Context context) {
         this.context = context;
@@ -43,7 +43,7 @@ public class Singleton {
                 Long timestamp = System.currentTimeMillis();
                 if (timestamp > expiresIn) {
                     loginDetails = null;
-                    Log.d(LOG, "token is expired. Need to login again");
+                    Log.d(TAG, "token is expired. Need to login again");
                 }
             } catch(Exception e) {
                 loginDetails = null;

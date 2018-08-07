@@ -1,22 +1,27 @@
 package me.varunon9.sellmyservices.uifragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.SignInButton;
+
 import me.varunon9.sellmyservices.R;
-import me.varunon9.sellmyservices.constants.AppConstants;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class LoginFragment extends Fragment {
+public class LoginFragment extends Fragment implements View.OnClickListener {
 
+    private GoogleSignInClient mGoogleSignInClient;
+    private  int RC_SIGN_IN = 0;
 
     public LoginFragment() {
         // Required empty public constructor
@@ -27,7 +32,36 @@ public class LoginFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login_as_seller, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_login, container, false);
+
+        // Configure sign-in to request the user's ID, email address, and basic
+        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.server_client_id))
+                .requestEmail()
+                .build();
+
+        // Build a GoogleSignInClient with the options specified by gso.
+        mGoogleSignInClient = GoogleSignIn.getClient(getActivity(), gso);
+
+        SignInButton signInUsingGoogleButton = rootView.findViewById(R.id.signInUsingGoogleButton);
+        signInUsingGoogleButton.setOnClickListener(this);
+        return rootView;
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.signInUsingGoogleButton:
+                signInUsingGoogle(null);
+                break;
+            // ...
+        }
+    }
+
+    private void signInUsingGoogle(View v) {
+        System.out.println("called");
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
 }

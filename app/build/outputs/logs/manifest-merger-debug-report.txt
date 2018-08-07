@@ -1,14 +1,17 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
-INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
-INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
-INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
+ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
+INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
+INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
+INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
 MERGED from [com.android.volley:volley:1.1.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/46aa2ac8b818cf53951b16f5554370bd/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:17:1-39:12
 MERGED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/998f3f56e30022aaa58f832c53ce7f9a/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/730e7313425241b522672e8d1a8a498c/AndroidManifest.xml:17:1-31:12
 MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/e6f2a4be285939e04194b4433276462c/AndroidManifest.xml:17:1-32:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/692d306df500ac779bf5ebfd6e0c878f/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-15.0.1.aar/d43bba3a403939390367fc56e8da4ad5/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-auth-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-15.0.1.aar/56564f76a60972fc9cf5b318a78243bc/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/a3b33648a128557f6daf9eff74255de6/AndroidManifest.xml:17:1-29:12
 MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/301845792df604a627a27ed32ee836e1/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/eee3c96d143a78bafe3f48a6eff21b9f/AndroidManifest.xml:17:1-28:12
@@ -23,20 +26,20 @@ MERGED from [com.android.support:support-core-utils:26.1.0] /home/varunkumar/.gr
 MERGED from [com.android.support:support-core-ui:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/0a030ccfb399c3aea9d49d050a792594/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/92363b9eadae0c6ad648d6bed801ea20/AndroidManifest.xml:17:1-31:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/9a4c1be06a86d223c0116d0f86d27b8f/AndroidManifest.xml:17:1-30:12
-INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
-INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
-INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
+INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
+INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
+INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
 	package
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:3:5-41
 		INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
 		INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
-		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
+		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
 		INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
-		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
+		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
 		INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:11-69
@@ -57,9 +60,11 @@ MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/
 	android:name
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:12:22-76
 application
-ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:14:5-56:19
+ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:14:5-52:19
 MERGED from [com.android.volley:volley:1.1.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/46aa2ac8b818cf53951b16f5554370bd/AndroidManifest.xml:9:5-20
 MERGED from [com.android.volley:volley:1.1.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/46aa2ac8b818cf53951b16f5554370bd/AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:22:5-37:19
+MERGED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:22:5-37:19
 MERGED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/998f3f56e30022aaa58f832c53ce7f9a/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/998f3f56e30022aaa58f832c53ce7f9a/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/730e7313425241b522672e8d1a8a498c/AndroidManifest.xml:25:5-29:19
@@ -148,20 +153,14 @@ ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/An
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:51:13-56
 	android:name
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:49:13-47
-activity#me.varunon9.sellmyservices.seeker.SellerActivity
-ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:52:9-55:68
-	android:label
-		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:54:13-58
-	android:theme
-		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:55:13-56
-	android:name
-		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:53:13-50
 uses-sdk
 INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
 INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
 MERGED from [com.android.volley:volley:1.1.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/46aa2ac8b818cf53951b16f5554370bd/AndroidManifest.xml:7:5-43
 MERGED from [com.android.volley:volley:1.1.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/46aa2ac8b818cf53951b16f5554370bd/AndroidManifest.xml:7:5-43
+MERGED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/998f3f56e30022aaa58f832c53ce7f9a/AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/998f3f56e30022aaa58f832c53ce7f9a/AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:appcompat-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/730e7313425241b522672e8d1a8a498c/AndroidManifest.xml:21:5-23:78
@@ -170,6 +169,10 @@ MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/
 MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/e6f2a4be285939e04194b4433276462c/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/692d306df500ac779bf5ebfd6e0c878f/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/692d306df500ac779bf5ebfd6e0c878f/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-auth-api-phone:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-15.0.1.aar/d43bba3a403939390367fc56e8da4ad5/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-15.0.1.aar/d43bba3a403939390367fc56e8da4ad5/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-15.0.1.aar/56564f76a60972fc9cf5b318a78243bc/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-15.0.1.aar/56564f76a60972fc9cf5b318a78243bc/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/a3b33648a128557f6daf9eff74255de6/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/a3b33648a128557f6daf9eff74255de6/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/301845792df604a627a27ed32ee836e1/AndroidManifest.xml:5:5-44
@@ -210,6 +213,24 @@ INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main
 		INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
 		INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:23:9-27:75
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:25:13-46
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:26:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:27:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:24:13-93
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:33:9-36:110
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:35:13-36
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:36:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:34:13-89
 meta-data#android.support.VERSION
 ADDED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/998f3f56e30022aaa58f832c53ce7f9a/AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:appcompat-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/730e7313425241b522672e8d1a8a498c/AndroidManifest.xml:26:9-28:38
