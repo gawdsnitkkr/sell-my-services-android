@@ -21,8 +21,9 @@ public final class AppConstants {
     public static final String SELLER = "seller";
     public static final String NAVIGATION_ITEM = "navigationItem";
     public static final String YOUR_PROFILE = "Your Profile";
-    public static final String LOGIN_AS_SELLER = "Login as Seller";
-    public static final String SIGNUP_AS_SELLER = "Signup as Seller";
+    public static final String YOUR_SERVICES = "Your Services";
+    public static final String LOGIN = "Login";
+    public static final String SIGNUP = "Signup";
     public static final String SETTINGS = "Settings";
     public static final String ABOUT_US = "About Us";
 
@@ -34,5 +35,18 @@ public final class AppConstants {
         private static final String DOMAIN = "https://sellmyservices.in";
         public static final String SEARCH_SELLERS =
                 DOMAIN + "/search/sellers";
+    }
+
+    public static final String SHARED_PREFERENCES_PREFIX = "me.varunon9.sellmyservices";
+
+    public static class LoginDetails {
+        private LoginDetails() {
+        }
+
+        public static final String NAME = "name";
+        public static final String EMAIL = "email";
+        public static final String AUTH_TOKEN = "authToken";
+        public static final String EXPIRES_IN = "expiresIn";
+        public static final String PROFILE_URL= "profileUrl";
     }
 }

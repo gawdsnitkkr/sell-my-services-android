@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
-INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
-INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
-INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
+ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
+INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
+INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
+INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
 MERGED from [com.android.volley:volley:1.1.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/46aa2ac8b818cf53951b16f5554370bd/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/998f3f56e30022aaa58f832c53ce7f9a/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/730e7313425241b522672e8d1a8a498c/AndroidManifest.xml:17:1-31:12
@@ -23,20 +23,20 @@ MERGED from [com.android.support:support-core-utils:26.1.0] /home/varunkumar/.gr
 MERGED from [com.android.support:support-core-ui:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/0a030ccfb399c3aea9d49d050a792594/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/92363b9eadae0c6ad648d6bed801ea20/AndroidManifest.xml:17:1-31:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/9a4c1be06a86d223c0116d0f86d27b8f/AndroidManifest.xml:17:1-30:12
-INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
-INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
-INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
+INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
+INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
+INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
 	package
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:3:5-41
 		INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
 		INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
-		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
+		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
 		INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
-		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
+		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
 		INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:11-69
@@ -57,7 +57,7 @@ MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/
 	android:name
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:12:22-76
 application
-ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:14:5-52:19
+ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:14:5-56:19
 MERGED from [com.android.volley:volley:1.1.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/46aa2ac8b818cf53951b16f5554370bd/AndroidManifest.xml:9:5-20
 MERGED from [com.android.volley:volley:1.1.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/46aa2ac8b818cf53951b16f5554370bd/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/998f3f56e30022aaa58f832c53ce7f9a/AndroidManifest.xml:25:5-29:19
@@ -141,13 +141,21 @@ ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/An
 	android:name
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:45:13-43
 activity#me.varunon9.sellmyservices.UiFragmentActivity
-ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:48:9-51:68
+ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:48:9-51:59
 	android:label
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:50:13-60
 	android:theme
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:51:13-56
 	android:name
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:49:13-47
+activity#me.varunon9.sellmyservices.seeker.SellerActivity
+ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:52:9-55:68
+	android:label
+		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:54:13-58
+	android:theme
+		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:55:13-56
+	android:name
+		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:53:13-50
 uses-sdk
 INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml

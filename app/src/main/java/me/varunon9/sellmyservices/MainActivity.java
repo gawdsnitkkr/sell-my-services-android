@@ -18,6 +18,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,23 +46,29 @@ public class MainActivity extends AppCompatActivity implements
     private LocationManager locationManager;
     private TextView searchTextView;
     private static final String LOG = "MainActivity";
+    private Singleton singleton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(LOG, "onCreate called");
         setContentView(R.layout.activity_main);
+
+        singleton = Singleton.getInstance(getApplicationContext());
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, toolbar, R.string.navigation_drawer_open,
+                R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
         View mapView = findViewById(R.id.map);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -79,6 +86,8 @@ public class MainActivity extends AppCompatActivity implements
         }
 
         searchTextView = (TextView) findViewById(R.id.searchTextView);
+
+        checkLoginAndUpdateUi(navigationView);
     }
 
     @Override
@@ -240,5 +249,46 @@ public class MainActivity extends AppCompatActivity implements
     public boolean onMarkerClick(Marker marker) {
         Log.d(LOG, marker.getTitle() + " clicked");
         return false;
+    }
+
+    private void checkLoginAndUpdateUi(NavigationView navigationView ) {
+        try {
+            JSONObject loginDetails = singleton.getLoginDetails();
+            View navigationDrawerHeaderLayout = navigationView.getHeaderView(0);
+            Menu navigationDrawerMenu = navigationView.getMenu();
+
+            ImageView navigationHeaderImageView = navigationDrawerHeaderLayout
+                    .findViewById(R.id.navigationHeaderImageView);
+            TextView navigationHeaderTitleTextView = navigationDrawerHeaderLayout
+                    .findViewById(R.id.navigationHeaderTitleTextView);
+            TextView navigationHeaderSubTitleTextView = navigationDrawerHeaderLayout
+                    .findViewById(R.id.navigationHeaderSubTitleTextView);
+
+            MenuItem profileMenuItem = navigationDrawerMenu.findItem(R.id.nav_user_profile);
+            MenuItem servicesMenuItem = navigationDrawerMenu.findItem(R.id.nav_seller_services);
+            MenuItem loginMenuItem = navigationDrawerMenu.findItem(R.id.nav_user_login);
+            MenuItem signupMenuItem = navigationDrawerMenu.findItem(R.id.nav_user_signup);
+
+            // not loggedIn, update Menu
+            if (loginDetails == null) {
+                profileMenuItem.setVisible(false);
+                servicesMenuItem.setVisible(false);
+            } else {
+                String userName = loginDetails.getString(AppConstants.LoginDetails.NAME);
+                String userEmail = loginDetails.getString(AppConstants.LoginDetails.NAME);
+                String profileUrl = loginDetails.getString(AppConstants.LoginDetails.PROFILE_URL);
+
+                loginMenuItem.setVisible(false);
+                signupMenuItem.setVisible(false);
+
+                navigationHeaderTitleTextView.setText(userName);
+                navigationHeaderSubTitleTextView.setText(userEmail);
+
+                // todo set profile pic when loggedIn
+                navigationHeaderImageView.setBackgroundResource(R.drawable.ic_user_profile);
+            }
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 }

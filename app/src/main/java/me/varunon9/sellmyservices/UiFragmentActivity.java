@@ -11,8 +11,9 @@ import android.view.View;
 
 import me.varunon9.sellmyservices.constants.AppConstants;
 import me.varunon9.sellmyservices.uifragments.AboutUsFragment;
-import me.varunon9.sellmyservices.uifragments.LoginAsSellerFragment;
-import me.varunon9.sellmyservices.uifragments.SignupAsSellerFragment;
+import me.varunon9.sellmyservices.uifragments.LoginFragment;
+import me.varunon9.sellmyservices.uifragments.SellerServicesFragment;
+import me.varunon9.sellmyservices.uifragments.SignupFragment;
 
 /**
  * This activity  displays various UI fragments when called from navigation drawer
@@ -65,12 +66,15 @@ public class UiFragmentActivity extends AppCompatActivity {
         String title = "";
         if (id == R.id.nav_user_profile) {
             title = AppConstants.YOUR_PROFILE;
-        } else if (id == R.id.nav_seller_login) {
-            title = AppConstants.LOGIN_AS_SELLER;
-            fragment = new LoginAsSellerFragment();
-        } else if (id == R.id.nav_seller_signup) {
-            title = AppConstants.SIGNUP_AS_SELLER;
-            fragment = new SignupAsSellerFragment();
+        } else if (id == R.id.nav_seller_services) {
+            title = AppConstants.YOUR_SERVICES;
+            fragment = new SellerServicesFragment();
+        } else if (id == R.id.nav_user_login) {
+            title = AppConstants.LOGIN;
+            fragment = new LoginFragment();
+        } else if (id == R.id.nav_user_signup) {
+            title = AppConstants.SIGNUP;
+            fragment = new SignupFragment();
         } else if (id == R.id.nav_about_us) {
             title = AppConstants.ABOUT_US;
             fragment = new AboutUsFragment();
@@ -87,15 +91,15 @@ public class UiFragmentActivity extends AppCompatActivity {
 
     // calling from XML
     public void goToSignupAsSellerFragment(View view) {
-        Fragment fragment = new SignupAsSellerFragment();
-        String title = AppConstants.SIGNUP_AS_SELLER;
+        Fragment fragment = new SignupFragment();
+        String title = AppConstants.SIGNUP;
         updateActionBarTitle(title);
         replaceOldFragment(fragment);
     }
 
     public void goToLoginAsSellerFragment(View view) {
-        Fragment fragment = new LoginAsSellerFragment();
-        String title = AppConstants.LOGIN_AS_SELLER;
+        Fragment fragment = new LoginFragment();
+        String title = AppConstants.LOGIN;
         updateActionBarTitle(title);
         replaceOldFragment(fragment);
     }

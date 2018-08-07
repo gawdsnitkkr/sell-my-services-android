@@ -9,13 +9,17 @@
             android:icon="@drawable/ic_menu_user_profile"
             android:title="Your Profile" />
         <item
-            android:id="@+id/nav_seller_login"
-            android:icon="@drawable/ic_menu_seller_login"
-            android:title="Login as Seller" />
+            android:id="@+id/nav_seller_services"
+            android:icon="@drawable/ic_menu_seller_services"
+            android:title="Your Services" />
         <item
-            android:id="@+id/nav_seller_signup"
+            android:id="@+id/nav_user_login"
+            android:icon="@drawable/ic_menu_seller_login"
+            android:title="Login" />
+        <item
+            android:id="@+id/nav_user_signup"
             android:icon="@drawable/ic_menu_seller_signup"
-            android:title="Signup as Seller" />
+            android:title="Signup" />
         <item
             android:id="@+id/nav_about_us"
             android:icon="@drawable/ic_menu_about_us"

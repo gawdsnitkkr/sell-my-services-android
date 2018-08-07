@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".UiFragmentActivity"
     android:layout_width="match_parent"
@@ -46,8 +47,26 @@
             android:layout_marginTop="@dimen/activity_horizontal_margin"
             android:layout_marginBottom="@dimen/activity_horizontal_margin"
             android:padding="12dp"
+            android:textColor="@color/colorWhite"
             android:background="@color/colorPrimaryLight"
             android:text="Login"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="OR"
+            android:gravity="center"
+            android:textSize="16dip"
+            android:padding="12dp" />
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            app:buttonSize="wide"
+            app:colorScheme="dark" />
 
         <TextView
             android:layout_width="match_parent"
