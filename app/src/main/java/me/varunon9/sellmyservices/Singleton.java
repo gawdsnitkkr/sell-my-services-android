@@ -95,4 +95,10 @@ public class Singleton {
         editor.putString(LOGIN_DETAILS, loginData);
         editor.apply(); // we don't care about return value so not using commit
     }
+
+    public void logout() {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear().commit();
+        this.loginDetails = null;
+    }
 }

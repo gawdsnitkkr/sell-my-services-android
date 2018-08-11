@@ -51,6 +51,6 @@ public final class AppConstants {
         public static final String EMAIL = "email";
         public static final String AUTH_TOKEN = "authToken";
         public static final String EXPIRY_TIME = "expiryTime";
-        public static final String PROFILE_URL= "profileUrl";
+        public static final String PROFILE_PIC = "profilePic";
     }
 }

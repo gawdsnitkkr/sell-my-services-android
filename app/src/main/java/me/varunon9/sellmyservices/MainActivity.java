@@ -127,8 +127,16 @@ public class MainActivity extends AppCompatActivity implements
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        if (id == R.id.nav_share) {
-        } else if (id == R.id.nav_rate) {
+        if (id == R.id.navShareApp) {
+        } else if (id == R.id.navRateApp) {
+        } else if (id == R.id.navUserLogout) {
+            singleton.logout();
+
+            // refreshing MainActivity
+            Intent intent = getIntent();
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            finish();
+            startActivity(intent);
         } else {
             Intent intent = new Intent(MainActivity.this, UiFragmentActivity.class);
             Bundle args = new Bundle();
@@ -264,19 +272,21 @@ public class MainActivity extends AppCompatActivity implements
             TextView navigationHeaderSubTitleTextView = navigationDrawerHeaderLayout
                     .findViewById(R.id.navigationHeaderSubTitleTextView);
 
-            MenuItem profileMenuItem = navigationDrawerMenu.findItem(R.id.nav_user_profile);
-            MenuItem servicesMenuItem = navigationDrawerMenu.findItem(R.id.nav_seller_services);
-            MenuItem loginMenuItem = navigationDrawerMenu.findItem(R.id.nav_user_login);
-            MenuItem signupMenuItem = navigationDrawerMenu.findItem(R.id.nav_user_signup);
+            MenuItem profileMenuItem = navigationDrawerMenu.findItem(R.id.navUserProfile);
+            MenuItem servicesMenuItem = navigationDrawerMenu.findItem(R.id.navSellerServices);
+            MenuItem loginMenuItem = navigationDrawerMenu.findItem(R.id.navUserLogin);
+            MenuItem signupMenuItem = navigationDrawerMenu.findItem(R.id.navUserSignup);
+            MenuItem logoutMenuItem = navigationDrawerMenu.findItem(R.id.navUserLogout);
 
             // not loggedIn, update Menu
             if (loginDetails == null) {
                 profileMenuItem.setVisible(false);
                 servicesMenuItem.setVisible(false);
+                logoutMenuItem.setVisible(false);
             } else {
                 String userName = loginDetails.getString(AppConstants.LoginDetails.NAME);
                 String userEmail = loginDetails.getString(AppConstants.LoginDetails.EMAIL);
-                String profileUrl = loginDetails.getString(AppConstants.LoginDetails.PROFILE_URL);
+                String profileUrl = loginDetails.getString(AppConstants.LoginDetails.PROFILE_PIC);
 
                 loginMenuItem.setVisible(false);
                 signupMenuItem.setVisible(false);

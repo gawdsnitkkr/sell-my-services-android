@@ -101,18 +101,18 @@ public class UiFragmentActivity extends AppCompatActivity {
     private Fragment getSelectedFragment(int id) {
         Fragment fragment = null;
         String title = "";
-        if (id == R.id.nav_user_profile) {
+        if (id == R.id.navUserProfile) {
             title = AppConstants.YOUR_PROFILE;
-        } else if (id == R.id.nav_seller_services) {
+        } else if (id == R.id.navSellerServices) {
             title = AppConstants.YOUR_SERVICES;
             fragment = new SellerServicesFragment();
-        } else if (id == R.id.nav_user_login) {
+        } else if (id == R.id.navUserLogin) {
             title = AppConstants.LOGIN;
             fragment = new LoginFragment();
-        } else if (id == R.id.nav_user_signup) {
+        } else if (id == R.id.navUserSignup) {
             title = AppConstants.SIGNUP;
             fragment = new SignupFragment();
-        } else if (id == R.id.nav_about_us) {
+        } else if (id == R.id.navAboutUs) {
             title = AppConstants.ABOUT_US;
             fragment = new AboutUsFragment();
         }

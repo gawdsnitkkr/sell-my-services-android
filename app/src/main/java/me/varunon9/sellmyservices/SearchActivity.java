@@ -95,6 +95,15 @@ public class SearchActivity extends AppCompatActivity {
             searchHistoryTextArrayList.add(searchHistory.getSearchText());
         }
 
+        // if list is empty then showing default values
+        if (searchHistoryList.isEmpty()) {
+            String suggestionsArray[] =
+                    getResources().getStringArray(R.array.search_suggestions_array);
+            for (String suggestion: suggestionsArray) {
+                searchHistoryTextArrayList.add(suggestion);
+            }
+        }
+
         // populate the searchHistoryListView from sqlite db
         contextUtility.populateListView(searchHistoryListView, searchHistoryTextArrayList);
 
