@@ -275,7 +275,7 @@ public class MainActivity extends AppCompatActivity implements
                 servicesMenuItem.setVisible(false);
             } else {
                 String userName = loginDetails.getString(AppConstants.LoginDetails.NAME);
-                String userEmail = loginDetails.getString(AppConstants.LoginDetails.NAME);
+                String userEmail = loginDetails.getString(AppConstants.LoginDetails.EMAIL);
                 String profileUrl = loginDetails.getString(AppConstants.LoginDetails.PROFILE_URL);
 
                 loginMenuItem.setVisible(false);

@@ -1,6 +1,8 @@
 package me.varunon9.sellmyservices;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -8,7 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
+import com.android.volley.VolleyError;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -23,6 +27,8 @@ import me.varunon9.sellmyservices.uifragments.AboutUsFragment;
 import me.varunon9.sellmyservices.uifragments.LoginFragment;
 import me.varunon9.sellmyservices.uifragments.SellerServicesFragment;
 import me.varunon9.sellmyservices.uifragments.SignupFragment;
+import me.varunon9.sellmyservices.utils.AjaxCallback;
+import me.varunon9.sellmyservices.utils.AjaxUtility;
 
 /**
  * This activity  displays various UI fragments when called from navigation drawer
@@ -32,8 +38,11 @@ public class UiFragmentActivity extends AppCompatActivity {
     private static final String LOG = "UiFragmentActivity";
     private Singleton singleton;
     private GoogleSignInClient mGoogleSignInClient;
-    private  int RC_SIGN_IN = 0;
+    private  int SIGN_IN_REQUEST_CODE = 0;
     private String TAG = "UiFragmentActivity";
+    private ProgressDialog progressDialog;
+    private AjaxUtility ajaxUtility;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +55,7 @@ public class UiFragmentActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         singleton = Singleton.getInstance(getApplicationContext());
+        ajaxUtility = new AjaxUtility(getApplicationContext());
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -141,9 +151,8 @@ public class UiFragmentActivity extends AppCompatActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
-        if (requestCode == RC_SIGN_IN) {
+        if (requestCode == SIGN_IN_REQUEST_CODE) {
             // The Task returned from this call is always completed, no need to attach
             // a listener.
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
@@ -155,16 +164,73 @@ public class UiFragmentActivity extends AppCompatActivity {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             String idToken = account.getIdToken();
+            JSONObject body = new JSONObject();
+            String url = AppConstants.Urls.GOOGLE_TOKEN_SIGNIN;
+            Location location = singleton.getCurrentLocation();
+            body.put("latitude", location.getLatitude());
+            body.put("longitude", location.getLongitude());
+            body.put("idToken", idToken);
+            showProgressDialog("Signing You In", "Please wait", false);
+            ajaxUtility.makeHttpRequest(url, "POST", body, new AjaxCallback() {
+                @Override
+                public void onSuccess(JSONObject response) {
+                    dismissProgressDialog();
+                    try {
+                        JSONObject loginDetails = response.getJSONObject("result");
+                        loginDetails.put(AppConstants.LoginDetails.AUTH_TOKEN,
+                                response.getString(AppConstants.LoginDetails.AUTH_TOKEN));
+                        Long expiresIn = response.getLong("expiresIn");
+                        Long expiryTime = (System.currentTimeMillis() / 1000) + expiresIn; // in secs
+                        loginDetails.put(AppConstants.LoginDetails.EXPIRY_TIME,
+                                expiryTime);
+                        singleton.setLoginDetails(loginDetails);
+                        Log.d(TAG, loginDetails.toString());
+                        goToMainActivity();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        showMessage("Parsing error");
+                    }
+                }
 
-            // TODO(developer): send ID Token to server and validate
-            // Signed in successfully, show authenticated UI.
-            //updateUI(account);
+                @Override
+                public void onError(VolleyError error) {
+                    dismissProgressDialog();
+                    showMessage(AppConstants.SERVER_SIDE_ERROR_MESSAGE);
+                }
+            });
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
             Log.w(TAG, "signInResult:failed code=" + e.getStatusCode());
             //updateUI(null);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+    }
+
+    private void showProgressDialog(String title, String message, boolean isCancellable) {
+        if (progressDialog == null) {
+            progressDialog = new ProgressDialog(UiFragmentActivity.this);
+        }
+        progressDialog.setTitle(title);
+        progressDialog.setMessage(message);
+        progressDialog.setCancelable(isCancellable);
+        progressDialog.show();
+    }
+
+    private void dismissProgressDialog() {
+        if (progressDialog != null) {
+            progressDialog.dismiss();
+        }
+    }
+
+    private void showMessage(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+    }
+
+    private void goToMainActivity() {
+        Intent intent = new Intent(UiFragmentActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 
 }

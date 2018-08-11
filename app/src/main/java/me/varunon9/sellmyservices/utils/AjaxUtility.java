@@ -28,9 +28,14 @@ public class AjaxUtility {
         singleton = Singleton.getInstance(context);
     }
 
-    public void makePostRequest(String url, JSONObject body, final AjaxCallback ajaxCallback) {
+    public void makeHttpRequest(String url, String method,
+                                JSONObject body, final AjaxCallback ajaxCallback) {
+        int methodCode = Request.Method.GET;
+        if (method.toLowerCase().equals("post")) {
+            methodCode = Request.Method.POST;
+        }
         try {
-            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(methodCode,
                     url, body, new Response.Listener<JSONObject>() {
 
                 @Override
@@ -47,7 +52,7 @@ public class AjaxUtility {
             });
             singleton.getRequestQueue().add(jsonObjectRequest);
         } catch(Exception e) {
-            Log.d(LOG, "Exception makePostRequest");
+            Log.d(LOG, "Exception makeHttpRequest");
             e.printStackTrace();
         }
     }

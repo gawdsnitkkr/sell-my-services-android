@@ -111,18 +111,17 @@ public class SearchActivity extends AppCompatActivity {
     private void searchServices(final String searchText, final boolean fromSearchHistory) {
         try {
             JSONObject body = new JSONObject();
-            String url = Urls.SEARCH_SELLERS;
             Location location = singleton.getCurrentLocation();
-            body.put("latitude", location.getLatitude());
-            body.put("longitude", location.getLongitude());
-            body.put("searchText", searchText);
+            String url = String.format(Urls.SEARCH_SELLERS
+                    + "?latitude=%f&longitude=%f&searchText=%s",
+                        location.getLatitude(), location.getLongitude(), searchText);
             showProgressDialog("Loading", "Please wait", false);
-            ajaxUtility.makePostRequest(url, body, new AjaxCallback() {
+            ajaxUtility.makeHttpRequest(url, "GET", null, new AjaxCallback() {
                 @Override
                 public void onSuccess(JSONObject response) {
                     dismissProgressDialog();
                     try {
-                        // todo: use response status code instead to check success (backend need to be changed too)
+                        // todo: use response status code instead to check success
                         if (response.getBoolean("success")) {
                             JSONArray result = response.getJSONArray("result");
                             if (result.length() > 0) {
@@ -148,7 +147,7 @@ public class SearchActivity extends AppCompatActivity {
                                 showMessage(message);
                             }
                         }
-                    } catch(Exception e) {
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }

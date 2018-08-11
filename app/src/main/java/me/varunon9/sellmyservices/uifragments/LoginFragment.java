@@ -21,7 +21,7 @@ import me.varunon9.sellmyservices.R;
 public class LoginFragment extends Fragment implements View.OnClickListener {
 
     private GoogleSignInClient mGoogleSignInClient;
-    private  int RC_SIGN_IN = 0;
+    private  int SIGN_IN_REQUEST_CODE = 0;
 
     public LoginFragment() {
         // Required empty public constructor
@@ -60,8 +60,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     }
 
     private void signInUsingGoogle(View v) {
-        System.out.println("called");
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-        startActivityForResult(signInIntent, RC_SIGN_IN);
+        getActivity().startActivityForResult(signInIntent, SIGN_IN_REQUEST_CODE);
     }
 }

@@ -39,9 +39,9 @@ public class Singleton {
         if (loginData != null) {
             try {
                 loginDetails = new JSONObject(loginData);
-                Long expiresIn = loginDetails.getLong(AppConstants.LoginDetails.EXPIRES_IN); // in ms
-                Long timestamp = System.currentTimeMillis();
-                if (timestamp > expiresIn) {
+                Long expiryTime = loginDetails.getLong(AppConstants.LoginDetails.EXPIRY_TIME); // in s
+                Long currentTimestamp = System.currentTimeMillis() / 1000; // in secs
+                if (currentTimestamp > expiryTime) {
                     loginDetails = null;
                     Log.d(TAG, "token is expired. Need to login again");
                 }
