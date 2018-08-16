@@ -4,15 +4,14 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
-import com.android.volley.VolleyError;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -36,12 +35,12 @@ import me.varunon9.sellmyservices.utils.AjaxUtility;
 public class UiFragmentActivity extends AppCompatActivity {
 
     private static final String LOG = "UiFragmentActivity";
-    private Singleton singleton;
+    public Singleton singleton;
     private GoogleSignInClient mGoogleSignInClient;
     private  int SIGN_IN_REQUEST_CODE = 0;
     private String TAG = "UiFragmentActivity";
     private ProgressDialog progressDialog;
-    private AjaxUtility ajaxUtility;
+    public AjaxUtility ajaxUtility;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -193,22 +192,30 @@ public class UiFragmentActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onError(VolleyError error) {
+                public void onError(JSONObject response) {
                     dismissProgressDialog();
-                    showMessage(AppConstants.SERVER_SIDE_ERROR_MESSAGE);
+                    try {
+                        String message = response.getString("message");
+                        int statusCode = response.getInt("statusCode");
+                        showMessage(statusCode + ": " + message);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        showMessage(AppConstants.GENERIC_ERROR_MESSAGE);
+                    }
                 }
             });
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
             Log.w(TAG, "signInResult:failed code=" + e.getStatusCode());
-            //updateUI(null);
+            showMessage("Something went wrong");
         } catch (Exception e) {
             e.printStackTrace();
+            showMessage("Something went wrong");
         }
     }
 
-    private void showProgressDialog(String title, String message, boolean isCancellable) {
+    public void showProgressDialog(String title, String message, boolean isCancellable) {
         if (progressDialog == null) {
             progressDialog = new ProgressDialog(UiFragmentActivity.this);
         }
@@ -218,17 +225,18 @@ public class UiFragmentActivity extends AppCompatActivity {
         progressDialog.show();
     }
 
-    private void dismissProgressDialog() {
+    public void dismissProgressDialog() {
         if (progressDialog != null) {
             progressDialog.dismiss();
         }
     }
 
-    private void showMessage(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+    public void showMessage(String message) {
+        View parentLayout = findViewById(R.id.uiFragmentActivityContent);
+        Snackbar.make(parentLayout, message, Snackbar.LENGTH_LONG).show();
     }
 
-    private void goToMainActivity() {
+    public void goToMainActivity() {
         Intent intent = new Intent(UiFragmentActivity.this, MainActivity.class);
         startActivity(intent);
     }

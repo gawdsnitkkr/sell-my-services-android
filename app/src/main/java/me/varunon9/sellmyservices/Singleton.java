@@ -90,6 +90,21 @@ public class Singleton {
 
     public void setLoginDetails(JSONObject loginDetails) {
         this.loginDetails = loginDetails;
+
+        // name, mobile and profilePic may or may not be available, so setting to empty
+        try {
+            if (!loginDetails.has(AppConstants.LoginDetails.NAME)) {
+                loginDetails.put(AppConstants.LoginDetails.NAME, "");
+            }
+            if (!loginDetails.has(AppConstants.LoginDetails.MOBILE)) {
+                loginDetails.put(AppConstants.LoginDetails.MOBILE, "");
+            }
+            if (!loginDetails.has(AppConstants.LoginDetails.PROFILE_PIC)) {
+                loginDetails.put(AppConstants.LoginDetails.PROFILE_PIC, "");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         SharedPreferences.Editor editor = sharedPreferences.edit();
         String loginData = loginDetails.toString();
         editor.putString(LOGIN_DETAILS, loginData);

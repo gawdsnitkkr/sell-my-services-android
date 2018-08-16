@@ -16,8 +16,8 @@ public final class AppConstants {
     public static final String INTERNET_CONNECTION_IS_MANDATORY =
             "Internet connection is mandatory.";
     public static final String DATABASE_NAME = "sellMyServices.db";
-    public static final String SERVER_SIDE_ERROR_MESSAGE =
-            "Server side error occurred.";
+    public static final String GENERIC_ERROR_MESSAGE =
+            "Something went wrong";
     public static final String SELLER = "seller";
     public static final String NAVIGATION_ITEM = "navigationItem";
     public static final String YOUR_PROFILE = "Your Profile";
@@ -37,6 +37,8 @@ public final class AppConstants {
                 DOMAIN + "/search/sellers/";
         public static final String GOOGLE_TOKEN_SIGNIN =
                 DOMAIN + "/sellers/google-token-signin/";
+        public static final String LOGIN = DOMAIN + "/sellers/login/";
+        public static final String SIGNUP = DOMAIN + "/sellers/signup/";
     }
 
     public static final String SHARED_PREFERENCES_PREFIX = "me.varunon9.sellmyservices";
@@ -56,6 +58,6 @@ public final class AppConstants {
 
     public static final String shareAppSubject = "SellMyServices";
     public static final String shareAppBody = "Search and sell your services to nearby locations."
-            + "\nDownload the app now\n"
-            + "https://play.google.com/store/apps/details?id=me.varunon9.sellmyservices";
+            + "\nDownload the app now"
+            + "\nhttps://play.google.com/store/apps/details?id=me.varunon9.sellmyservices";
 }

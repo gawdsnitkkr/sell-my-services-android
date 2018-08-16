@@ -13,8 +13,6 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.android.volley.VolleyError;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -162,10 +160,18 @@ public class SearchActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onError(VolleyError error) {
+                public void onError(JSONObject response) {
                     dismissProgressDialog();
-                    showMessage(AppConstants.SERVER_SIDE_ERROR_MESSAGE);
+                    try {
+                        String message = response.getString("message");
+                        int statusCode = response.getInt("statusCode");
+                        showMessage(statusCode + ": " + message);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        showMessage(AppConstants.GENERIC_ERROR_MESSAGE);
+                    }
                 }
+
             });
         } catch(Exception e) {
             e.printStackTrace();

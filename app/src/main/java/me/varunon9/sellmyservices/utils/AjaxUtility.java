@@ -3,16 +3,16 @@ package me.varunon9.sellmyservices.utils;
 import android.content.Context;
 import android.util.Log;
 
-import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONObject;
 
 import me.varunon9.sellmyservices.Singleton;
+import me.varunon9.sellmyservices.constants.AppConstants;
 
 /**
  * Created by varunkumar on 24/7/18.
@@ -33,6 +33,10 @@ public class AjaxUtility {
         int methodCode = Request.Method.GET;
         if (method.toLowerCase().equals("post")) {
             methodCode = Request.Method.POST;
+        } else if (method.toLowerCase().equals("put")) {
+            methodCode = Request.Method.PUT;
+        } else if (method.toLowerCase().equals("delete")) {
+            methodCode = Request.Method.DELETE;
         }
         try {
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(methodCode,
@@ -46,8 +50,28 @@ public class AjaxUtility {
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    Log.e(LOG, error.toString());
-                    ajaxCallback.onError(error);
+                    JSONObject responseObject = new JSONObject();
+                    try {
+                        NetworkResponse response = error.networkResponse;
+                        JSONObject errorObject = new JSONObject(new String(response.data));
+                        if (response != null) {
+                            int statusCode = response.statusCode;
+                            responseObject.put("statusCode", statusCode);
+                            responseObject.put("message", errorObject.get("message"));
+                            if (errorObject.has("errors")) {
+                                responseObject.put("errors", errorObject.get("errors"));
+                            } else {
+                                responseObject.put("errors", null);
+                            }
+                        } else {
+                            responseObject.put("statusCode", 0); // it shouldn't happen
+                            responseObject.put("message", AppConstants.GENERIC_ERROR_MESSAGE);
+                            responseObject.put("errors", null);
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    ajaxCallback.onError(responseObject);
                 }
             });
             singleton.getRequestQueue().add(jsonObjectRequest);
