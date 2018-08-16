@@ -53,4 +53,9 @@ public final class AppConstants {
         public static final String EXPIRY_TIME = "expiryTime";
         public static final String PROFILE_PIC = "profilePic";
     }
+
+    public static final String shareAppSubject = "SellMyServices";
+    public static final String shareAppBody = "Search and sell your services to nearby locations."
+            + "\nDownload the app now\n"
+            + "https://play.google.com/store/apps/details?id=me.varunon9.sellmyservices";
 }

@@ -1,10 +1,12 @@
 package me.varunon9.sellmyservices;
 
 import android.Manifest;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -128,7 +130,9 @@ public class MainActivity extends AppCompatActivity implements
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         if (id == R.id.navShareApp) {
+            shareApp();
         } else if (id == R.id.navRateApp) {
+            rateApp();
         } else if (id == R.id.navUserLogout) {
             singleton.logout();
 
@@ -299,6 +303,33 @@ public class MainActivity extends AppCompatActivity implements
             }
         } catch(Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    private void shareApp() {
+        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+        String shareBody = AppConstants.shareAppBody;
+        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT,
+                AppConstants.shareAppSubject);
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+        startActivity(Intent.createChooser(sharingIntent, "Share via"));
+    }
+
+    private void rateApp() {
+        Uri uri = Uri.parse("market://details?id=" + this.getPackageName());
+        Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
+        // To count with Play market backstack, After pressing back button,
+        // to taken back to our application, we need to add following flags to intent.
+        goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY
+                | Intent.FLAG_ACTIVITY_NEW_DOCUMENT
+                | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+        try {
+            startActivity(goToMarket);
+        } catch (ActivityNotFoundException e) {
+            startActivity(new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("http://play.google.com/store/apps/details?id="
+                            + this.getPackageName())));
         }
     }
 }
