@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="me.varunon9.sellmyservices.MainActivity"
+    android:id="@+id/mainActivityContent"
     tools:showIn="@layout/app_bar_main">
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"

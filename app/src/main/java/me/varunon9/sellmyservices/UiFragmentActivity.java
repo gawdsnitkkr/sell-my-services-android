@@ -24,6 +24,7 @@ import org.json.JSONObject;
 import me.varunon9.sellmyservices.constants.AppConstants;
 import me.varunon9.sellmyservices.uifragments.AboutUsFragment;
 import me.varunon9.sellmyservices.uifragments.LoginFragment;
+import me.varunon9.sellmyservices.uifragments.ProfileFragment;
 import me.varunon9.sellmyservices.uifragments.SellerServicesFragment;
 import me.varunon9.sellmyservices.uifragments.SignupFragment;
 import me.varunon9.sellmyservices.utils.AjaxCallback;
@@ -102,6 +103,7 @@ public class UiFragmentActivity extends AppCompatActivity {
         String title = "";
         if (id == R.id.navUserProfile) {
             title = AppConstants.YOUR_PROFILE;
+            fragment = new ProfileFragment();
         } else if (id == R.id.navSellerServices) {
             title = AppConstants.YOUR_SERVICES;
             fragment = new SellerServicesFragment();

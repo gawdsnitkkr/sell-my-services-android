@@ -8,6 +8,7 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.util.Log;
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements
     private TextView searchTextView;
     private static final String TAG = "MainActivity";
     private Singleton singleton;
+    private boolean doubleBackToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,7 +100,20 @@ public class MainActivity extends AppCompatActivity implements
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            if (doubleBackToExitPressedOnce) {
+                super.onBackPressed();
+                return;
+            }
+            doubleBackToExitPressedOnce = true;
+            showMessage("Please click BACK again to exit");
+
+            new Handler().postDelayed(new Runnable() {
+
+                @Override
+                public void run() {
+                    doubleBackToExitPressedOnce = false;
+                }
+            }, 2000);
         }
     }
 
@@ -331,5 +346,10 @@ public class MainActivity extends AppCompatActivity implements
                     Uri.parse("http://play.google.com/store/apps/details?id="
                             + this.getPackageName())));
         }
+    }
+
+    private void showMessage(String message) {
+        View parentLayout = findViewById(R.id.mainActivityContent);
+        Snackbar.make(parentLayout, message, Snackbar.LENGTH_LONG).show();
     }
 }
