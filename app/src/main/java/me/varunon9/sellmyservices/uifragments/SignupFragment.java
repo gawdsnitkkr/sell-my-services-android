@@ -76,10 +76,7 @@ public class SignupFragment extends Fragment {
     private void signup(String email, String password) {
         JSONObject body = new JSONObject();
         String url = AppConstants.Urls.SIGNUP;
-        Location location = uiFragmentActivity.singleton.getCurrentLocation();
         try {
-            body.put("latitude", location.getLatitude());
-            body.put("longitude", location.getLongitude());
             body.put("email", email);
             body.put("password", password);
             uiFragmentActivity.showProgressDialog("Signing Up", "Please wait", false);

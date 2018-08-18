@@ -24,6 +24,7 @@ import static me.varunon9.sellmyservices.constants.AppConstants.Urls;
 import me.varunon9.sellmyservices.constants.AppConstants;
 import me.varunon9.sellmyservices.db.DbHelper;
 import me.varunon9.sellmyservices.db.models.SearchHistory;
+import me.varunon9.sellmyservices.db.services.SearchHistoryService;
 import me.varunon9.sellmyservices.utils.AjaxCallback;
 import me.varunon9.sellmyservices.utils.AjaxUtility;
 import me.varunon9.sellmyservices.utils.ContextUtility;
@@ -31,6 +32,7 @@ import me.varunon9.sellmyservices.utils.ContextUtility;
 public class SearchActivity extends AppCompatActivity {
 
     DbHelper dbHelper;
+    SearchHistoryService searchHistoryService;
     ContextUtility contextUtility;
     AjaxUtility ajaxUtility;
     Singleton singleton;
@@ -52,6 +54,7 @@ public class SearchActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         dbHelper = new DbHelper(this);
+        searchHistoryService = new SearchHistoryService(dbHelper);
         contextUtility = new ContextUtility(this);
         ajaxUtility = new AjaxUtility(getApplicationContext());
         singleton = Singleton.getInstance(getApplicationContext());
@@ -86,7 +89,7 @@ public class SearchActivity extends AppCompatActivity {
         searchHistoryListView = (ListView) findViewById(R.id.searchHistoryListView);
 
         // getting recent 10 searches from sqlite db
-        searchHistoryList = dbHelper.getRecentSearchHistories(10);
+        searchHistoryList = searchHistoryService.getRecentSearchHistories(10);
 
         // constructing strings arrayList from searchHistory
         for (SearchHistory searchHistory: searchHistoryList) {
@@ -136,7 +139,7 @@ public class SearchActivity extends AppCompatActivity {
                                 if (!fromSearchHistory) {
                                     SearchHistory searchHistory = new SearchHistory();
                                     searchHistory.setSearchText(searchText);
-                                    dbHelper.createSearchHistory(searchHistory);
+                                    searchHistoryService.createSearchHistory(searchHistory);
                                 }
 
                                 // go to MainActivity and show sellers on map

@@ -6,9 +6,9 @@ package me.varunon9.sellmyservices.db.models;
 
 public class SearchHistory {
 
-    int id;
-    String searchText;
-    long createdAt;
+    private int id;
+    private String searchText;
+    private long createdAt;
 
     public SearchHistory() {
         this.createdAt = System.currentTimeMillis();

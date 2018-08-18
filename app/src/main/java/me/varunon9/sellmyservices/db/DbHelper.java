@@ -1,17 +1,11 @@
 package me.varunon9.sellmyservices.db;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import me.varunon9.sellmyservices.constants.AppConstants;
-import me.varunon9.sellmyservices.db.models.SearchHistory;
 
 /**
  * Created by varunkumar on 4/7/18.
@@ -19,21 +13,30 @@ import me.varunon9.sellmyservices.db.models.SearchHistory;
 
 public class DbHelper extends SQLiteOpenHelper {
 
-    private static final String LOG = "DbHelper";
+    private static final String TAG = "DbHelper";
 
     // If you change the database schema, you must increment the database version.
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = AppConstants.DATABASE_NAME;
 
-    // table names
-    private static final String TABLE_SEARCH_HISTORY = "searchHistory";
+    // table names (singular)
+    public static final String TABLE_SEARCH_HISTORY = "searchHistory";
+    public static final String TABLE_USER = "user";
 
     // common column names
-    private static final String COLUMN_ID = "id";
-    private static final String COLUMN_CREATED_AT = "createdAt";
+    public static final String COLUMN_ID = "id";
+    public static final String COLUMN_CREATED_AT = "createdAt";
 
     // searchHistory table column names
-    private static final String COLUMN_SEARCH_TEXT= "searchText";
+    public static final String COLUMN_SEARCH_TEXT = "searchText";
+
+    // seller table column names
+    public static final String COLUMN_USER_MOBILE = "mobile";
+    public static final String COLUMN_USER_NAME = "name";
+    public static final String COLUMN_USER_GENDER = "gender";
+    public static final String COLUMN_USER_EMAIL = "email";
+    public static final String COLUMN_USER_PROFILE_PIC = "profilePic";
+    public static final String COLUMN_USER_TYPE = "type";
 
     // table create statements
     // searchHistory table create statement
@@ -42,23 +45,35 @@ public class DbHelper extends SQLiteOpenHelper {
             + COLUMN_SEARCH_TEXT + " TEXT, "
             + COLUMN_CREATED_AT + " INTEGER)";
 
+    // seller table create statement
+    private static final String CREATE_TABLE_USER = "CREATE TABLE "
+            + TABLE_USER + "(" + COLUMN_ID + " INTEGER PRIMARY KEY, "
+            + COLUMN_USER_MOBILE + " TEXT, "
+            + COLUMN_USER_NAME + " TEXT, "
+            + COLUMN_USER_GENDER + " TEXT, "
+            + COLUMN_USER_EMAIL + " TEXT, "
+            + COLUMN_USER_PROFILE_PIC + " TEXT, "
+            + COLUMN_USER_TYPE + " TEXT, "
+            + COLUMN_CREATED_AT + " INTEGER)";
+
     public DbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        Log.d(LOG, "onCreate called");
+        Log.d(TAG, "onCreate called");
 
         //  called whenever the app is freshly installed.
         // create all tables
         sqLiteDatabase.execSQL(CREATE_TABLE_SEARCH_HISTORY);
+        sqLiteDatabase.execSQL(CREATE_TABLE_USER);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion,
                           int newVersion) {
-        Log.d(LOG, "onUpgrade called");
+        Log.d(TAG, "onUpgrade called");
 
         /**
          * called whenever the app is upgraded and launched and the
@@ -74,103 +89,5 @@ public class DbHelper extends SQLiteOpenHelper {
             case 2:
                 // alter or create table queries for version 3
         }
-    }
-
-    // CRUD operations for searchHistory table
-
-    // creating a searchHistory
-    public long createSearchHistory(SearchHistory searchHistory) {
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-        values.put(COLUMN_SEARCH_TEXT, searchHistory.getSearchText());
-        values.put(COLUMN_CREATED_AT, searchHistory.getCreatedAt());
-
-        long searchHistoryId = db.insert(TABLE_SEARCH_HISTORY, null, values);
-
-        db.close();
-        Log.d(LOG, "creating search history: " + searchHistory.getSearchText());
-        return searchHistoryId;
-    }
-
-    // reading from searchHistory- get a single searchHistory
-    public SearchHistory getSearchHistory(long id) {
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        String projection[] = {
-                COLUMN_ID, COLUMN_SEARCH_TEXT, COLUMN_CREATED_AT
-        };
-
-        String selection = COLUMN_ID + " = ?";
-        String selectionArgs[] = {
-                String.valueOf(id)
-        };
-
-        Cursor cursor = db.query(
-                TABLE_SEARCH_HISTORY, // The table to query
-                projection, // The array of columns to return (pass null to get all)
-                selection, // The columns for the WHERE clause
-                selectionArgs, // The values for the WHERE clause
-                null, // don't group the rows
-                null, // don't filter by row groups
-                null // The sort order
-        );
-
-        if (cursor != null) {
-            cursor.moveToFirst();
-        }
-
-        SearchHistory searchHistory = new SearchHistory();
-        searchHistory.setId(cursor.getInt(cursor.getColumnIndex(COLUMN_ID)));
-        searchHistory.setSearchText(
-                cursor.getString(cursor.getColumnIndex(COLUMN_SEARCH_TEXT))
-        );
-        searchHistory.setCreatedAt(
-                cursor.getLong(cursor.getColumnIndex(COLUMN_CREATED_AT))
-        );
-
-        db.close();
-        return searchHistory;
-    }
-
-    // get recent x(count) searchHistories or all if count <= 0
-    public List<SearchHistory> getRecentSearchHistories(int count) {
-        List<SearchHistory> searchHistoryList = new ArrayList<>();
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        String sortOrder = COLUMN_CREATED_AT + " DESC";
-        String limit = null; // fetch all rows
-
-        // fetch recent x(count) rows
-        if (count > 0) {
-            limit = String.valueOf(count);
-        }
-        Cursor cursor = db.query(
-                TABLE_SEARCH_HISTORY, // The table to query
-                null, // The array of columns to return (pass null to get all)
-                null, // The columns for the WHERE clause
-                null, // The values for the WHERE clause
-                null, // don't group the rows
-                null, // don't filter by row groups
-                null, // The sort order
-                limit // limit
-        );
-
-        if (cursor.moveToFirst()) {
-            do {
-                SearchHistory searchHistory = new SearchHistory();
-                searchHistory.setId(cursor.getInt(cursor.getColumnIndex(COLUMN_ID)));
-                searchHistory.setSearchText(
-                        cursor.getString(cursor.getColumnIndex(COLUMN_SEARCH_TEXT))
-                );
-                searchHistory.setCreatedAt(
-                        cursor.getLong(cursor.getColumnIndex(COLUMN_CREATED_AT))
-                );
-                searchHistoryList.add(searchHistory);
-            } while (cursor.moveToNext());
-        }
-
-        db.close();
-        return searchHistoryList;
     }
 }

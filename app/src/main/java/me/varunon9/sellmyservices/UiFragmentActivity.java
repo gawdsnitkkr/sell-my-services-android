@@ -167,9 +167,6 @@ public class UiFragmentActivity extends AppCompatActivity {
             String idToken = account.getIdToken();
             JSONObject body = new JSONObject();
             String url = AppConstants.Urls.GOOGLE_TOKEN_SIGNIN;
-            Location location = singleton.getCurrentLocation();
-            body.put("latitude", location.getLatitude());
-            body.put("longitude", location.getLongitude());
             body.put("idToken", idToken);
             showProgressDialog("Signing You In", "Please wait", false);
             ajaxUtility.makeHttpRequest(url, "POST", body, new AjaxCallback() {

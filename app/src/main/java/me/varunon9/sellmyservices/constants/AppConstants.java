@@ -36,9 +36,9 @@ public final class AppConstants {
         public static final String SEARCH_SELLERS =
                 DOMAIN + "/search/sellers/";
         public static final String GOOGLE_TOKEN_SIGNIN =
-                DOMAIN + "/sellers/google-token-signin/";
-        public static final String LOGIN = DOMAIN + "/sellers/login/";
-        public static final String SIGNUP = DOMAIN + "/sellers/signup/";
+                DOMAIN + "/google-token-signin/";
+        public static final String LOGIN = DOMAIN + "/login/";
+        public static final String SIGNUP = DOMAIN + "/signup/";
     }
 
     public static final String SHARED_PREFERENCES_PREFIX = "me.varunon9.sellmyservices";
