@@ -49,7 +49,7 @@ public final class AppConstants {
 
         public static final String ID = "id";
         public static final String MOBILE = "mobile";
-        public static final String NAME = "name";
+        public static final String FIRST_NAME = "firstName";
         public static final String EMAIL = "email";
         public static final String AUTH_TOKEN = "authToken";
         public static final String EXPIRY_TIME = "expiryTime";
@@ -60,4 +60,17 @@ public final class AppConstants {
     public static final String shareAppBody = "Search and sell your services to nearby locations."
             + "\nDownload the app now"
             + "\nhttps://play.google.com/store/apps/details?id=me.varunon9.sellmyservices";
+
+    public static class UserProfile {
+        private UserProfile() {
+        }
+
+        public static final String ID = "id";
+        public static final String MOBILE = "mobile";
+        public static final String FIRST_NAME = "firstName";
+        public static final String LAST_NAME = "lastName";
+        public static final String GENDER = "gender";
+        public static final String EMAIL = "email";
+        public static final String PROFILE_PIC = "profilePic";
+    }
 }

@@ -21,22 +21,25 @@ public class DbHelper extends SQLiteOpenHelper {
 
     // table names (singular)
     public static final String TABLE_SEARCH_HISTORY = "searchHistory";
-    public static final String TABLE_USER = "user";
+    public static final String TABLE_SERVICE = "service";
 
     // common column names
     public static final String COLUMN_ID = "id";
     public static final String COLUMN_CREATED_AT = "createdAt";
+    public static final String COLUMN_UPDATED_AT = "updatedAt";
 
     // searchHistory table column names
     public static final String COLUMN_SEARCH_TEXT = "searchText";
 
-    // seller table column names
-    public static final String COLUMN_USER_MOBILE = "mobile";
-    public static final String COLUMN_USER_NAME = "name";
-    public static final String COLUMN_USER_GENDER = "gender";
-    public static final String COLUMN_USER_EMAIL = "email";
-    public static final String COLUMN_USER_PROFILE_PIC = "profilePic";
-    public static final String COLUMN_USER_TYPE = "type";
+    // service table column names
+    public static final String COLUMN_SERVICE_NAME = "name";
+    public static final String COLUMN_SERVICE_TYPE = "type";
+    public static final String COLUMN_SERVICE_DESCRIPTION = "description";
+    public static final String COLUMN_SERVICE_TAGS = "tags";
+    public static final String COLUMN_SERVICE_RATING = "rating";
+    public static final String COLUMN_SERVICE_RATING_COUNT = "ratingCount";
+    public static final String COLUMN_SERVICE_LATITUDE = "latitude";
+    public static final String COLUMN_SERVICE_LONGITUDE = "longitude";
 
     // table create statements
     // searchHistory table create statement
@@ -46,15 +49,17 @@ public class DbHelper extends SQLiteOpenHelper {
             + COLUMN_CREATED_AT + " INTEGER)";
 
     // seller table create statement
-    private static final String CREATE_TABLE_USER = "CREATE TABLE "
-            + TABLE_USER + "(" + COLUMN_ID + " INTEGER PRIMARY KEY, "
-            + COLUMN_USER_MOBILE + " TEXT, "
-            + COLUMN_USER_NAME + " TEXT, "
-            + COLUMN_USER_GENDER + " TEXT, "
-            + COLUMN_USER_EMAIL + " TEXT, "
-            + COLUMN_USER_PROFILE_PIC + " TEXT, "
-            + COLUMN_USER_TYPE + " TEXT, "
-            + COLUMN_CREATED_AT + " INTEGER)";
+    private static final String CREATE_TABLE_SERVICE = "CREATE TABLE "
+            + TABLE_SERVICE + "(" + COLUMN_ID + " INTEGER PRIMARY KEY, "
+            + COLUMN_SERVICE_NAME + " TEXT, "
+            + COLUMN_SERVICE_TYPE + " TEXT, "
+            + COLUMN_SERVICE_DESCRIPTION + " TEXT, "
+            + COLUMN_SERVICE_TAGS + " TEXT, "
+            + COLUMN_SERVICE_RATING + " REAL, "
+            + COLUMN_SERVICE_RATING_COUNT + " INTEGER, "
+            + COLUMN_SERVICE_LATITUDE + " REAL, "
+            + COLUMN_SERVICE_LONGITUDE + " REAL, "
+            + COLUMN_UPDATED_AT + " INTEGER)";
 
     public DbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -67,7 +72,7 @@ public class DbHelper extends SQLiteOpenHelper {
         //  called whenever the app is freshly installed.
         // create all tables
         sqLiteDatabase.execSQL(CREATE_TABLE_SEARCH_HISTORY);
-        sqLiteDatabase.execSQL(CREATE_TABLE_USER);
+        sqLiteDatabase.execSQL(CREATE_TABLE_SERVICE);
     }
 
     @Override

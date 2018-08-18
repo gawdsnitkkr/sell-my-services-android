@@ -24,32 +24,14 @@ public class Singleton {
     private Context context;
     private LocationManager locationManager;
     private JSONObject loginDetails;
-    private SharedPreferences sharedPreferences;
     private String LOGIN_DETAILS = "loginDetails";
+    private JSONObject profileDetails;
+    private String PROFILE_DETAILS = "profileDetails";
     private String TAG = "Singleton";
 
     private Singleton(Context context) {
         this.context = context;
         requestQueue = getRequestQueue();
-        String sharedPreferencesFileName = AppConstants.SHARED_PREFERENCES_PREFIX
-                + LOGIN_DETAILS;
-        sharedPreferences = context.getSharedPreferences(sharedPreferencesFileName,
-                Context.MODE_PRIVATE);
-        String loginData = sharedPreferences.getString(LOGIN_DETAILS, null);
-        if (loginData != null) {
-            try {
-                loginDetails = new JSONObject(loginData);
-                Long expiryTime = loginDetails.getLong(AppConstants.LoginDetails.EXPIRY_TIME); // in s
-                Long currentTimestamp = System.currentTimeMillis() / 1000; // in secs
-                if (currentTimestamp > expiryTime) {
-                    loginDetails = null;
-                    Log.d(TAG, "token is expired. Need to login again");
-                }
-            } catch(Exception e) {
-                loginDetails = null;
-                e.printStackTrace();
-            }
-        }
     }
 
     public static synchronized Singleton getInstance(Context context) {
@@ -82,20 +64,35 @@ public class Singleton {
     /**
      * This method will check if authToken and other login details are present
      * in shared preferences
-     * @return null if user is not signed in else login details as json
+     * @return null if user is not signed-in else return login details as json
      */
     public JSONObject getLoginDetails() {
+        if (loginDetails == null) {
+            SharedPreferences sharedPreferences = getLoginSharedPreferences();
+            String loginData = sharedPreferences.getString(LOGIN_DETAILS, null);
+            if (loginData != null) {
+                try {
+                    loginDetails = new JSONObject(loginData);
+                    Long expiryTime = loginDetails.getLong(AppConstants.LoginDetails.EXPIRY_TIME); // in s
+                    Long currentTimestamp = System.currentTimeMillis() / 1000; // in secs
+                    if (currentTimestamp > expiryTime) {
+                        loginDetails = null;
+                        Log.d(TAG, "token is expired. Need to login again");
+                    }
+                } catch(Exception e) {
+                    loginDetails = null;
+                    e.printStackTrace();
+                }
+            }
+        }
         return loginDetails;
     }
 
     public void setLoginDetails(JSONObject loginDetails) {
         this.loginDetails = loginDetails;
 
-        // name, mobile and profilePic may or may not be available, so setting to empty
+        // mobile and profilePic may or may not be available, so setting to empty
         try {
-            if (!loginDetails.has(AppConstants.LoginDetails.NAME)) {
-                loginDetails.put(AppConstants.LoginDetails.NAME, "");
-            }
             if (!loginDetails.has(AppConstants.LoginDetails.MOBILE)) {
                 loginDetails.put(AppConstants.LoginDetails.MOBILE, "");
             }
@@ -105,6 +102,8 @@ public class Singleton {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        SharedPreferences sharedPreferences = getLoginSharedPreferences();
         SharedPreferences.Editor editor = sharedPreferences.edit();
         String loginData = loginDetails.toString();
         editor.putString(LOGIN_DETAILS, loginData);
@@ -112,8 +111,51 @@ public class Singleton {
     }
 
     public void logout() {
+        SharedPreferences sharedPreferences = getLoginSharedPreferences();
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.clear().commit();
         this.loginDetails = null;
+    }
+
+    private SharedPreferences getLoginSharedPreferences() {
+        String sharedPreferencesFileName = AppConstants.SHARED_PREFERENCES_PREFIX
+                + LOGIN_DETAILS;
+        SharedPreferences sharedPreferences =
+                context.getSharedPreferences(sharedPreferencesFileName, Context.MODE_PRIVATE);
+        return sharedPreferences;
+    }
+
+    public JSONObject getProfileDetails() {
+        if (profileDetails != null) {
+            SharedPreferences sharedPreferences = getProfileDetailsSharedPreferences();
+            String profileDetailsData = sharedPreferences.getString(PROFILE_DETAILS, null);
+
+            if (profileDetailsData != null) {
+                try {
+                    profileDetails = new JSONObject(profileDetailsData);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return profileDetails;
+    }
+
+    public void setProfileDetails(JSONObject profileDetails) {
+        this.profileDetails = profileDetails;
+
+        SharedPreferences sharedPreferences = getProfileDetailsSharedPreferences();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        String profileDetailsData = profileDetails.toString();
+        editor.putString(PROFILE_DETAILS, profileDetailsData);
+        editor.apply();
+    }
+
+    private SharedPreferences getProfileDetailsSharedPreferences() {
+        String sharedPreferencesFileName = AppConstants.SHARED_PREFERENCES_PREFIX
+                + PROFILE_DETAILS;
+        SharedPreferences sharedPreferences =
+                context.getSharedPreferences(sharedPreferencesFileName, Context.MODE_PRIVATE);
+        return sharedPreferences;
     }
 }

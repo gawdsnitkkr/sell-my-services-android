@@ -43,17 +43,6 @@ public class ContextUtility {
         return false;
     }
 
-    // todo: deprecate this method here instead use from singleton class
-    // currently being used in MainActivity
-    public Location getCurrentLocation(LocationManager locationManager)
-            throws SecurityException {
-        Criteria criteria = new Criteria();
-        Location location = locationManager.getLastKnownLocation(
-                locationManager.getBestProvider(criteria, false)
-        );
-        return location;
-    }
-
     /**
      * zoom level range-
      *

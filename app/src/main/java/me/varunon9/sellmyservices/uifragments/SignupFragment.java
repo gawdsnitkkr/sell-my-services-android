@@ -24,6 +24,7 @@ import me.varunon9.sellmyservices.utils.AjaxCallback;
 public class SignupFragment extends Fragment {
 
     private EditText emailEditText;
+    private EditText firstNameEditText;
     private EditText passwordEditText;
     private EditText passwordConfirmEditText;
     private Button signupButton;
@@ -44,6 +45,7 @@ public class SignupFragment extends Fragment {
 
         uiFragmentActivity = ((UiFragmentActivity) getActivity());
 
+        firstNameEditText = (EditText) rootView.findViewById(R.id.firstNameSellerSignup);
         emailEditText = (EditText) rootView.findViewById(R.id.emailSellerSignup);
         passwordEditText = (EditText) rootView.findViewById(R.id.passwordSellerSignup);
         passwordConfirmEditText
@@ -53,11 +55,12 @@ public class SignupFragment extends Fragment {
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String firstName = firstNameEditText.getText().toString();
                 String email = emailEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
                 String passwordConfirm = passwordConfirmEditText.getText().toString();
 
-                if (email.equals("") || password.equals("")) {
+                if (firstName.equals("") || email.equals("") || password.equals("")) {
                     showMessage("All fields are mandatory");
                     return;
                 }
@@ -67,16 +70,17 @@ public class SignupFragment extends Fragment {
                     return;
                 }
 
-                signup(email, password);
+                signup(email, password, firstName);
             }
         });
         return rootView;
     }
 
-    private void signup(String email, String password) {
+    private void signup(String email, String password, String firstName) {
         JSONObject body = new JSONObject();
         String url = AppConstants.Urls.SIGNUP;
         try {
+            body.put("firstName", firstName);
             body.put("email", email);
             body.put("password", password);
             uiFragmentActivity.showProgressDialog("Signing Up", "Please wait", false);

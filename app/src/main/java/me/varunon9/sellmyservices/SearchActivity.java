@@ -143,7 +143,11 @@ public class SearchActivity extends AppCompatActivity {
                                 }
 
                                 // go to MainActivity and show sellers on map
-                                Intent intent = new Intent(SearchActivity.this, MainActivity.class);
+                                Intent intent = new Intent(SearchActivity.this,
+                                        MainActivity.class);
+                                // clear history stack so that back button does no lead to SearchActivity
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                                        | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 Bundle args = new Bundle();
                                 args.putString(AppConstants.SELLER, result.toString());
                                 intent.putExtras(args);

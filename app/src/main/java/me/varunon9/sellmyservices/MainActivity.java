@@ -192,7 +192,7 @@ public class MainActivity extends AppCompatActivity implements
         if (contextUtility.isBuildVersionGreaterEqualToMarshmallow()) {
             if (contextUtility.isPermissionGranted(Manifest.permission.ACCESS_FINE_LOCATION)) {
                 // show the user his current location
-                location = contextUtility.getCurrentLocation(locationManager);
+                location = singleton.getCurrentLocation();
             } else {
                 // request for location permission
                 ActivityCompat.requestPermissions(this, new String[] {
@@ -201,7 +201,7 @@ public class MainActivity extends AppCompatActivity implements
             }
         } else {
             // show the user his current location
-            location = contextUtility.getCurrentLocation(locationManager);
+            location = singleton.getCurrentLocation();
         }
 
         contextUtility.showLocationOnMap(mMap, location, AppConstants.CURRENT_LOCATION_MARKER,
@@ -222,7 +222,7 @@ public class MainActivity extends AppCompatActivity implements
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     // permission was granted, show user his current location
-                    Location location = contextUtility.getCurrentLocation(locationManager);
+                    Location location = singleton.getCurrentLocation();
                     mMap.clear(); // clear initial marker
                     contextUtility.showLocationOnMap(mMap, location, AppConstants.CURRENT_LOCATION_MARKER,
                             true, 15);
@@ -303,14 +303,14 @@ public class MainActivity extends AppCompatActivity implements
                 servicesMenuItem.setVisible(false);
                 logoutMenuItem.setVisible(false);
             } else {
-                String userName = loginDetails.getString(AppConstants.LoginDetails.NAME);
+                String userFirstName = loginDetails.getString(AppConstants.LoginDetails.FIRST_NAME);
                 String userEmail = loginDetails.getString(AppConstants.LoginDetails.EMAIL);
                 String profileUrl = loginDetails.getString(AppConstants.LoginDetails.PROFILE_PIC);
 
                 loginMenuItem.setVisible(false);
                 signupMenuItem.setVisible(false);
 
-                navigationHeaderTitleTextView.setText(userName);
+                navigationHeaderTitleTextView.setText(userFirstName);
                 navigationHeaderSubTitleTextView.setText(userEmail);
 
                 // todo set profile pic when loggedIn

@@ -237,6 +237,9 @@ public class UiFragmentActivity extends AppCompatActivity {
 
     public void goToMainActivity() {
         Intent intent = new Intent(UiFragmentActivity.this, MainActivity.class);
+        // clear history stack so that back button does no lead to UiFragmentActivity
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 
