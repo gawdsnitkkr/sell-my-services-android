@@ -27,13 +27,15 @@ import me.varunon9.sellmyservices.uifragments.LoginFragment;
 import me.varunon9.sellmyservices.uifragments.ProfileFragment;
 import me.varunon9.sellmyservices.uifragments.SellerServicesFragment;
 import me.varunon9.sellmyservices.uifragments.SignupFragment;
+import me.varunon9.sellmyservices.uifragments.dummy.DummyContent;
 import me.varunon9.sellmyservices.utils.AjaxCallback;
 import me.varunon9.sellmyservices.utils.AjaxUtility;
 
 /**
  * This activity  displays various UI fragments when called from navigation drawer
  */
-public class UiFragmentActivity extends AppCompatActivity {
+public class UiFragmentActivity extends AppCompatActivity
+        implements SellerServicesFragment.OnListFragmentInteractionListener {
 
     private static final String LOG = "UiFragmentActivity";
     public Singleton singleton;
@@ -243,4 +245,8 @@ public class UiFragmentActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @Override
+    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+
+    }
 }
