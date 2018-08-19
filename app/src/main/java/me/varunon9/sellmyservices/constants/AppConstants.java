@@ -16,8 +16,8 @@ public final class AppConstants {
     public static final String INTERNET_CONNECTION_IS_MANDATORY =
             "Internet connection is mandatory.";
     public static final String DATABASE_NAME = "sellMyServices.db";
-    public static final String GENERIC_ERROR_MESSAGE =
-            "Something went wrong";
+    public static final String GENERIC_ERROR_MESSAGE = "Something went wrong";
+    public static final String LOGIN_ERROR_MESSAGE = "Error: Please login again";
     public static final String SELLER = "seller";
     public static final String NAVIGATION_ITEM = "navigationItem";
     public static final String YOUR_PROFILE = "Your Profile";
@@ -39,6 +39,7 @@ public final class AppConstants {
                 DOMAIN + "/google-token-signin/";
         public static final String LOGIN = DOMAIN + "/login/";
         public static final String SIGNUP = DOMAIN + "/signup/";
+        public static final String USER_PROFILE = DOMAIN + "/users/:id";
     }
 
     public static final String SHARED_PREFERENCES_PREFIX = "me.varunon9.sellmyservices";

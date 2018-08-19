@@ -89,19 +89,37 @@ public class Singleton {
     }
 
     public void setLoginDetails(JSONObject loginDetails) {
-        this.loginDetails = loginDetails;
-
-        // mobile and profilePic may or may not be available, so setting to empty
+        /**
+         * ideally all LoginDetails params should be available (except mobile and profilePic)
+         * Still checking for all keys for robustness
+         */
         try {
+            if (!loginDetails.has(AppConstants.LoginDetails.ID)) {
+                loginDetails.put(AppConstants.LoginDetails.ID, 0);
+            }
+            if (!loginDetails.has(AppConstants.LoginDetails.FIRST_NAME)) {
+                loginDetails.put(AppConstants.LoginDetails.FIRST_NAME, "");
+            }
+            if (!loginDetails.has(AppConstants.LoginDetails.EMAIL)) {
+                loginDetails.put(AppConstants.LoginDetails.EMAIL, "");
+            }
             if (!loginDetails.has(AppConstants.LoginDetails.MOBILE)) {
                 loginDetails.put(AppConstants.LoginDetails.MOBILE, "");
             }
             if (!loginDetails.has(AppConstants.LoginDetails.PROFILE_PIC)) {
                 loginDetails.put(AppConstants.LoginDetails.PROFILE_PIC, "");
             }
+            if (!loginDetails.has(AppConstants.LoginDetails.AUTH_TOKEN)) {
+                loginDetails.put(AppConstants.LoginDetails.AUTH_TOKEN, "");
+            }
+            if (!loginDetails.has(AppConstants.LoginDetails.EXPIRY_TIME)) {
+                loginDetails.put(AppConstants.LoginDetails.EXPIRY_TIME, 0);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        this.loginDetails = loginDetails;
 
         SharedPreferences sharedPreferences = getLoginSharedPreferences();
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -111,10 +129,18 @@ public class Singleton {
     }
 
     public void logout() {
+        // clearing login data
         SharedPreferences sharedPreferences = getLoginSharedPreferences();
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.clear().commit();
+
+        // clearing profile data
+        sharedPreferences = getProfileDetailsSharedPreferences();
+        editor = sharedPreferences.edit();
+        editor.clear().commit();
+
         this.loginDetails = null;
+        this.profileDetails = null;
     }
 
     private SharedPreferences getLoginSharedPreferences() {
@@ -142,6 +168,36 @@ public class Singleton {
     }
 
     public void setProfileDetails(JSONObject profileDetails) {
+        /**
+         * Ideally profileDetails should have all keys of AppConstant.UserProfile
+         * Still checking for robustness
+         */
+        try {
+            if (!profileDetails.has(AppConstants.UserProfile.ID)) {
+                profileDetails.put(AppConstants.UserProfile.ID, 0);
+            }
+            if (!profileDetails.has(AppConstants.UserProfile.MOBILE)) {
+                profileDetails.put(AppConstants.UserProfile.MOBILE, "");
+            }
+            if (!profileDetails.has(AppConstants.UserProfile.FIRST_NAME)) {
+                profileDetails.put(AppConstants.UserProfile.FIRST_NAME, "");
+            }
+            if (!profileDetails.has(AppConstants.UserProfile.LAST_NAME)) {
+                profileDetails.put(AppConstants.UserProfile.LAST_NAME, "");
+            }
+            if (!profileDetails.has(AppConstants.UserProfile.GENDER)) {
+                profileDetails.put(AppConstants.UserProfile.GENDER, "male");
+            }
+            if (!profileDetails.has(AppConstants.UserProfile.EMAIL)) {
+                profileDetails.put(AppConstants.UserProfile.EMAIL, "");
+            }
+            if (!profileDetails.has(AppConstants.UserProfile.PROFILE_PIC)) {
+                profileDetails.put(AppConstants.UserProfile.PROFILE_PIC, "");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         this.profileDetails = profileDetails;
 
         SharedPreferences sharedPreferences = getProfileDetailsSharedPreferences();

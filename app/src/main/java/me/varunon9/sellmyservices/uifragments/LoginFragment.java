@@ -64,9 +64,9 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         SignInButton signInUsingGoogleButton = rootView.findViewById(R.id.signInUsingGoogleButton);
         signInUsingGoogleButton.setOnClickListener(this);
 
-        emailEditText = (EditText) rootView.findViewById(R.id.loginEmailEditText);
-        passwordEditText = (EditText) rootView.findViewById(R.id.loginPasswordEditText);
-        loginButton = (Button) rootView.findViewById(R.id.loginButton);
+        emailEditText = rootView.findViewById(R.id.loginEmailEditText);
+        passwordEditText = rootView.findViewById(R.id.loginPasswordEditText);
+        loginButton = rootView.findViewById(R.id.loginButton);
 
         loginButton.setOnClickListener(this);
         return rootView;

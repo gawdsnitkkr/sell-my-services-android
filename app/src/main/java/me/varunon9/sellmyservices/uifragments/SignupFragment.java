@@ -45,12 +45,12 @@ public class SignupFragment extends Fragment {
 
         uiFragmentActivity = ((UiFragmentActivity) getActivity());
 
-        firstNameEditText = (EditText) rootView.findViewById(R.id.firstNameSellerSignup);
-        emailEditText = (EditText) rootView.findViewById(R.id.emailSellerSignup);
-        passwordEditText = (EditText) rootView.findViewById(R.id.passwordSellerSignup);
+        firstNameEditText = rootView.findViewById(R.id.firstNameSellerSignup);
+        emailEditText = rootView.findViewById(R.id.emailSellerSignup);
+        passwordEditText = rootView.findViewById(R.id.passwordSellerSignup);
         passwordConfirmEditText
-                = (EditText) rootView.findViewById(R.id.passwordConfirmSellerSignup);
-        signupButton = (Button) rootView.findViewById(R.id.signupButton);
+                = rootView.findViewById(R.id.passwordConfirmSellerSignup);
+        signupButton = rootView.findViewById(R.id.signupButton);
 
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override

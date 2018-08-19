@@ -26,6 +26,7 @@
                 android:cursorVisible="false"
                 android:focusable="false"
                 android:focusableInTouchMode="false"
+                android:text="okay"
                 android:hint="Email" />
         </android.support.design.widget.TextInputLayout>
 
@@ -35,11 +36,24 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
             <android.support.design.widget.TextInputEditText
-                android:id="@+id/profileNameEditText"
+                android:id="@+id/profileFirstNameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:hint="Name"/>
+                android:hint="First Name"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/profileLastNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="Last Name"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -73,6 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
+            android:id="@+id/genderRadioGroup"
             android:orientation="horizontal">
 
             <RadioButton

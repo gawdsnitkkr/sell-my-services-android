@@ -11,6 +11,9 @@ import com.android.volley.toolbox.JsonObjectRequest;
 
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import me.varunon9.sellmyservices.Singleton;
 import me.varunon9.sellmyservices.constants.AppConstants;
 
@@ -73,7 +76,23 @@ public class AjaxUtility {
                     }
                     ajaxCallback.onError(responseObject);
                 }
-            });
+            }) {
+                @Override
+                public Map<String, String> getHeaders() {
+                    Map<String, String>  params = new HashMap<>();
+                    try {
+                        JSONObject loginDetails = singleton.getLoginDetails();
+                        if (loginDetails != null) {
+                            String authToken =
+                                    loginDetails.getString(AppConstants.LoginDetails.AUTH_TOKEN);
+                            params.put(AppConstants.LoginDetails.AUTH_TOKEN, authToken);
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    return params;
+                }
+            };
             singleton.getRequestQueue().add(jsonObjectRequest);
         } catch(Exception e) {
             Log.d(LOG, "Exception makeHttpRequest");
