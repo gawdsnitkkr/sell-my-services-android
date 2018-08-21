@@ -40,6 +40,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String COLUMN_SERVICE_RATING_COUNT = "ratingCount";
     public static final String COLUMN_SERVICE_LATITUDE = "latitude";
     public static final String COLUMN_SERVICE_LONGITUDE = "longitude";
+    public static final String COLUMN_SERVICE_LOCATION = "location";
 
     // table create statements
     // searchHistory table create statement
@@ -59,6 +60,7 @@ public class DbHelper extends SQLiteOpenHelper {
             + COLUMN_SERVICE_RATING_COUNT + " INTEGER, "
             + COLUMN_SERVICE_LATITUDE + " REAL, "
             + COLUMN_SERVICE_LONGITUDE + " REAL, "
+            + COLUMN_SERVICE_LOCATION + " TEXT, "
             + COLUMN_UPDATED_AT + " INTEGER)";
 
     public DbHelper(Context context) {

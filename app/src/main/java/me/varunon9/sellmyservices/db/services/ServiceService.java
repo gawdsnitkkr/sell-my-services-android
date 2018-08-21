@@ -36,6 +36,7 @@ public class ServiceService {
         values.put(dbHelper.COLUMN_SERVICE_RATING_COUNT, service.getRatingCount());
         values.put(dbHelper.COLUMN_SERVICE_LATITUDE, service.getLatitude());
         values.put(dbHelper.COLUMN_SERVICE_LONGITUDE, service.getLongitude());
+        values.put(dbHelper.COLUMN_SERVICE_LOCATION, service.getLocation());
         values.put(dbHelper.COLUMN_UPDATED_AT, service.getUpdatedAt());
 
         long serviceId = db.insert(dbHelper.TABLE_SERVICE, null, values);
@@ -72,6 +73,9 @@ public class ServiceService {
         }
         if (service.getLongitude() != 0.0) {
             values.put(dbHelper.COLUMN_SERVICE_LONGITUDE, service.getLongitude());
+        }
+        if (service.getLocation() != null) {
+            values.put(dbHelper.COLUMN_SERVICE_LOCATION, service.getLocation());
         }
         values.put(dbHelper.COLUMN_UPDATED_AT, service.getUpdatedAt());
 
@@ -151,6 +155,9 @@ public class ServiceService {
         );
         service.setLongitude(
                 cursor.getDouble(cursor.getColumnIndex(dbHelper.COLUMN_SERVICE_LONGITUDE))
+        );
+        service.setLocation(
+                cursor.getString(cursor.getColumnIndex(dbHelper.COLUMN_SERVICE_LOCATION))
         );
         service.setUpdatedAt(
                 cursor.getLong(cursor.getColumnIndex(dbHelper.COLUMN_UPDATED_AT))

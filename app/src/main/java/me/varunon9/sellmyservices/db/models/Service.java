@@ -15,6 +15,7 @@ public class Service {
     private int ratingCount;
     private double latitude;
     private double longitude;
+    private String location;
     private long updatedAt;
 
     public Service() {
@@ -91,6 +92,14 @@ public class Service {
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public long getUpdatedAt() {
