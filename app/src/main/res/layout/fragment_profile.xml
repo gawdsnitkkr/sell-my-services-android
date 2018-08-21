@@ -26,7 +26,6 @@
                 android:cursorVisible="false"
                 android:focusable="false"
                 android:focusableInTouchMode="false"
-                android:text="okay"
                 android:hint="Email" />
         </android.support.design.widget.TextInputLayout>
 

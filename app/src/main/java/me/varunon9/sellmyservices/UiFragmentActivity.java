@@ -22,12 +22,13 @@ import com.google.android.gms.tasks.Task;
 import org.json.JSONObject;
 
 import me.varunon9.sellmyservices.constants.AppConstants;
+import me.varunon9.sellmyservices.db.DbHelper;
+import me.varunon9.sellmyservices.db.models.Service;
 import me.varunon9.sellmyservices.uifragments.AboutUsFragment;
 import me.varunon9.sellmyservices.uifragments.LoginFragment;
 import me.varunon9.sellmyservices.uifragments.ProfileFragment;
 import me.varunon9.sellmyservices.uifragments.SellerServicesFragment;
 import me.varunon9.sellmyservices.uifragments.SignupFragment;
-import me.varunon9.sellmyservices.uifragments.dummy.DummyContent;
 import me.varunon9.sellmyservices.utils.AjaxCallback;
 import me.varunon9.sellmyservices.utils.AjaxUtility;
 
@@ -35,7 +36,7 @@ import me.varunon9.sellmyservices.utils.AjaxUtility;
  * This activity  displays various UI fragments when called from navigation drawer
  */
 public class UiFragmentActivity extends AppCompatActivity
-        implements SellerServicesFragment.OnListFragmentInteractionListener {
+        implements SellerServicesFragment.OnServiceListFragmentInteractionListener {
 
     private static final String LOG = "UiFragmentActivity";
     public Singleton singleton;
@@ -44,6 +45,7 @@ public class UiFragmentActivity extends AppCompatActivity
     private String TAG = "UiFragmentActivity";
     private ProgressDialog progressDialog;
     public AjaxUtility ajaxUtility;
+    public DbHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +60,7 @@ public class UiFragmentActivity extends AppCompatActivity
 
         singleton = Singleton.getInstance(getApplicationContext());
         ajaxUtility = new AjaxUtility(getApplicationContext());
+        dbHelper = new DbHelper(getApplicationContext());
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -246,7 +249,7 @@ public class UiFragmentActivity extends AppCompatActivity
     }
 
     @Override
-    public void onListFragmentInteraction(DummyContent.DummyItem item) {
-
+    public void onServiceListFragmentInteraction(Service service) {
+        System.out.println(service.toString());
     }
 }

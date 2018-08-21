@@ -7,23 +7,24 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import me.varunon9.sellmyservices.R;
-import me.varunon9.sellmyservices.uifragments.SellerServicesFragment.OnListFragmentInteractionListener;
-import me.varunon9.sellmyservices.uifragments.dummy.DummyContent.DummyItem;
+import me.varunon9.sellmyservices.db.models.Service;
+import me.varunon9.sellmyservices.uifragments.SellerServicesFragment.OnServiceListFragmentInteractionListener;
 
 import java.util.List;
 
 /**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
- * specified {@link OnListFragmentInteractionListener}.
- * TODO: Replace the implementation with code for your data type.
+ * {@link RecyclerView.Adapter} that can display a {@link Service} and makes a call to the
+ * specified {@link OnServiceListFragmentInteractionListener}.
  */
-public class ServiceItemRecyclerViewAdapter extends RecyclerView.Adapter<ServiceItemRecyclerViewAdapter.ViewHolder> {
+public class ServiceItemRecyclerViewAdapter
+        extends RecyclerView.Adapter<ServiceItemRecyclerViewAdapter.ViewHolder> {
 
-    private final List<DummyItem> mValues;
-    private final OnListFragmentInteractionListener mListener;
+    private final List<Service> serviceList;
+    private final OnServiceListFragmentInteractionListener mListener;
 
-    public ServiceItemRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
-        mValues = items;
+    public ServiceItemRecyclerViewAdapter(List<Service> serviceList,
+                                          OnServiceListFragmentInteractionListener listener) {
+        this.serviceList = serviceList;
         mListener = listener;
     }
 
@@ -36,10 +37,10 @@ public class ServiceItemRecyclerViewAdapter extends RecyclerView.Adapter<Service
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
-        holder.mDescriptionView.setText(mValues.get(position).details);
+        holder.mItem = serviceList.get(position);
+        holder.serviceRatingView.setText(String.valueOf(serviceList.get(position).getRating()));
+        holder.serviceNameView.setText(serviceList.get(position).getName());
+        holder.serviceDescriptionView.setText(serviceList.get(position).getDescription());
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +48,7 @@ public class ServiceItemRecyclerViewAdapter extends RecyclerView.Adapter<Service
                 if (null != mListener) {
                     // Notify the active callbacks interface (the activity, if the
                     // fragment is attached to one) that an item has been selected.
-                    mListener.onListFragmentInteraction(holder.mItem);
+                    mListener.onServiceListFragmentInteraction(holder.mItem);
                 }
             }
         });
@@ -55,27 +56,27 @@ public class ServiceItemRecyclerViewAdapter extends RecyclerView.Adapter<Service
 
     @Override
     public int getItemCount() {
-        return mValues.size();
+        return serviceList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public final TextView mIdView;
-        public final TextView mContentView;
-        public final TextView mDescriptionView;
-        public DummyItem mItem;
+        public final TextView serviceNameView;
+        public final TextView serviceRatingView;
+        public final TextView serviceDescriptionView;
+        public Service mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.serviceRating);
-            mContentView = (TextView) view.findViewById(R.id.serviceName);
-            mDescriptionView = (TextView) view.findViewById(R.id.serviceDescription);
+            serviceRatingView = (TextView) view.findViewById(R.id.serviceRating);
+            serviceNameView = (TextView) view.findViewById(R.id.serviceName);
+            serviceDescriptionView = (TextView) view.findViewById(R.id.serviceDescription);
         }
 
         @Override
         public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+            return super.toString() + " '" + serviceNameView.getText() + "'";
         }
     }
 }

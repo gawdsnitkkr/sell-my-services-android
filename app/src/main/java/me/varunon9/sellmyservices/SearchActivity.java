@@ -3,6 +3,7 @@ package me.varunon9.sellmyservices;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.location.Location;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -59,7 +60,6 @@ public class SearchActivity extends AppCompatActivity {
         ajaxUtility = new AjaxUtility(getApplicationContext());
         singleton = Singleton.getInstance(getApplicationContext());
 
-        populateSearchHistoryListView(dbHelper);
         searchServicesEditText.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int actionId, KeyEvent keyEvent) {
@@ -73,6 +73,20 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * asynchronously populate search History list
+         * Android warning of `memory leak` can be ignored because `getRecentSearchHistories`
+         * db query is talking roughly 30 ms
+         * in fact even without async call, performance impact is not visible
+         */
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                populateSearchHistoryListView();
+                return null;
+            }
+        }.execute();
+
     }
 
     @Override
@@ -81,7 +95,7 @@ public class SearchActivity extends AppCompatActivity {
         return true;
     }
 
-    private void populateSearchHistoryListView(DbHelper dbHelper) {
+    private void populateSearchHistoryListView() {
         ListView searchHistoryListView;
         List<SearchHistory> searchHistoryList;
         ArrayList<String> searchHistoryTextArrayList = new ArrayList<>();
@@ -106,9 +120,8 @@ public class SearchActivity extends AppCompatActivity {
         }
 
         // populate the searchHistoryListView from sqlite db
-        contextUtility.populateListView(searchHistoryListView, searchHistoryTextArrayList);
+        contextUtility.populateSimpleListView(searchHistoryListView, searchHistoryTextArrayList);
 
-        // todo: add click listener to search
         searchHistoryListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {

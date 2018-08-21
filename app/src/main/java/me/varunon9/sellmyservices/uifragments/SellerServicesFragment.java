@@ -1,6 +1,7 @@
 package me.varunon9.sellmyservices.uifragments;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,19 +10,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import me.varunon9.sellmyservices.R;
-import me.varunon9.sellmyservices.uifragments.dummy.DummyContent;
-import me.varunon9.sellmyservices.uifragments.dummy.DummyContent.DummyItem;
+import me.varunon9.sellmyservices.UiFragmentActivity;
+import me.varunon9.sellmyservices.db.DbHelper;
+import me.varunon9.sellmyservices.db.models.Service;
+import me.varunon9.sellmyservices.db.services.ServiceService;
 
 /**
  * A fragment representing a list of Items.
  * <p/>
- * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
+ * Activities containing this fragment MUST implement the {@link OnServiceListFragmentInteractionListener}
  * interface.
  */
 public class SellerServicesFragment extends Fragment {
 
-    private OnListFragmentInteractionListener mListener;
+    private OnServiceListFragmentInteractionListener mListener;
+    private UiFragmentActivity uiFragmentActivity;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -33,7 +40,6 @@ public class SellerServicesFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -41,12 +47,34 @@ public class SellerServicesFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_service_item_list, container, false);
 
+        uiFragmentActivity = ((UiFragmentActivity) getActivity());
+
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            recyclerView.setAdapter(new ServiceItemRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+
+            final List<Service> serviceList = new ArrayList<>();
+            final ServiceItemRecyclerViewAdapter serviceItemRecyclerViewAdapter =
+                    new ServiceItemRecyclerViewAdapter(serviceList, mListener);
+
+            /**
+             * A seller practically will not have more than 10-15 services
+             * so db query to get services from sqlite will take roughly 20-30 ms
+             * So ignoring Android memory leak warning
+             */
+            new AsyncTask<Void, Void, Void>() {
+                @Override
+                protected Void doInBackground(Void... voids) {
+                    ServiceService serviceService = new ServiceService(uiFragmentActivity.dbHelper);
+                    List<Service> services = serviceService.getServices();
+                    serviceList.addAll(services);
+                    serviceItemRecyclerViewAdapter.notifyDataSetChanged();
+                    return null;
+                }
+            }.execute();
+            recyclerView.setAdapter(serviceItemRecyclerViewAdapter);
         }
         return view;
     }
@@ -55,8 +83,8 @@ public class SellerServicesFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnListFragmentInteractionListener) {
-            mListener = (OnListFragmentInteractionListener) context;
+        if (context instanceof OnServiceListFragmentInteractionListener) {
+            mListener = (OnServiceListFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnListFragmentInteractionListener");
@@ -79,8 +107,7 @@ public class SellerServicesFragment extends Fragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
-    public interface OnListFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+    public interface OnServiceListFragmentInteractionListener {
+        void onServiceListFragmentInteraction(Service service);
     }
 }

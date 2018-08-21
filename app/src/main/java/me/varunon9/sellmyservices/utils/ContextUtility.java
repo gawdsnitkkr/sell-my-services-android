@@ -81,7 +81,7 @@ public class ContextUtility {
         }
     }
 
-    public void populateListView(ListView listView, ArrayList<String> list) {
+    public void populateSimpleListView(ListView listView, ArrayList<String> list) {
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
                 context,
                 android.R.layout.simple_list_item_1,
