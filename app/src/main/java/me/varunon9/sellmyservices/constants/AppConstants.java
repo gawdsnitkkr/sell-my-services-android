@@ -18,7 +18,7 @@ public final class AppConstants {
     public static final String DATABASE_NAME = "sellMyServices.db";
     public static final String GENERIC_ERROR_MESSAGE = "Something went wrong";
     public static final String LOGIN_ERROR_MESSAGE = "Error: Please login again";
-    public static final String SELLER = "seller";
+    public static final String SERVICES = "services";
     public static final String NAVIGATION_ITEM = "navigationItem";
     public static final String YOUR_PROFILE = "Your Profile";
     public static final String YOUR_SERVICES = "Your Services";
@@ -33,8 +33,8 @@ public final class AppConstants {
 
         private static final String DOMAIN = "http://192.168.43.147:4000";
         //private static final String DOMAIN = "https://sellmyservices.in";
-        public static final String SEARCH_SELLERS =
-                DOMAIN + "/search/sellers/";
+        public static final String SEARCH_SERVICES =
+                DOMAIN + "/search/services/";
         public static final String GOOGLE_TOKEN_SIGNIN =
                 DOMAIN + "/google-token-signin/";
         public static final String LOGIN = DOMAIN + "/login/";

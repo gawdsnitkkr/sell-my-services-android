@@ -135,7 +135,7 @@ public class SearchActivity extends AppCompatActivity {
         try {
             JSONObject body = new JSONObject();
             Location location = singleton.getCurrentLocation();
-            String url = String.format(Urls.SEARCH_SELLERS
+            String url = String.format(Urls.SEARCH_SERVICES
                     + "?latitude=%f&longitude=%f&searchText=%s",
                         location.getLatitude(), location.getLongitude(), searchText);
             showProgressDialog("Loading", "Please wait", false);
@@ -144,35 +144,27 @@ public class SearchActivity extends AppCompatActivity {
                 public void onSuccess(JSONObject response) {
                     dismissProgressDialog();
                     try {
-                        // todo: use response status code instead to check success
-                        if (response.getBoolean("success")) {
-                            JSONArray result = response.getJSONArray("result");
-                            if (result.length() > 0) {
-                                // saving search text to sqlite db
-                                if (!fromSearchHistory) {
-                                    SearchHistory searchHistory = new SearchHistory();
-                                    searchHistory.setSearchText(searchText);
-                                    searchHistoryService.createSearchHistory(searchHistory);
-                                }
+                        JSONArray result = response.getJSONArray("result");
+                        if (result.length() > 0) {
+                            // saving search text to sqlite db
+                            if (!fromSearchHistory) {
+                                SearchHistory searchHistory = new SearchHistory();
+                                searchHistory.setSearchText(searchText);
+                                searchHistoryService.createSearchHistory(searchHistory);
+                            }
 
-                                // go to MainActivity and show sellers on map
-                                Intent intent = new Intent(SearchActivity.this,
-                                        MainActivity.class);
-                                // clear history stack so that back button does no lead to SearchActivity
-                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
-                                        | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                Bundle args = new Bundle();
-                                args.putString(AppConstants.SELLER, result.toString());
-                                intent.putExtras(args);
-                                startActivity(intent);
-                            } else {
-                                showMessage("No sellers found");
-                            }
+                            // go to MainActivity and show sellers on map
+                            Intent intent = new Intent(SearchActivity.this,
+                                    MainActivity.class);
+                            // clear history stack so that back button does no lead to SearchActivity
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                                    | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            Bundle args = new Bundle();
+                            args.putString(AppConstants.SERVICES, result.toString());
+                            intent.putExtras(args);
+                            startActivity(intent);
                         } else {
-                            String message = response.getString("message");
-                            if (message != null) {
-                                showMessage(message);
-                            }
+                            showMessage("No sellers found. Try searching multiple keywords");
                         }
                     } catch (Exception e) {
                         e.printStackTrace();

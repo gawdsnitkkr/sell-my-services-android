@@ -182,9 +182,9 @@ public class MainActivity extends AppCompatActivity implements
         Bundle bundle = intent.getExtras();
         mMap.setOnMarkerClickListener(this);
         if (bundle != null) {
-            String sellersString = bundle.getString(AppConstants.SELLER);
-            if (sellersString != null) {
-                showSellersOnMap(bundle, sellersString);
+            String servicesString = bundle.getString(AppConstants.SERVICES);
+            if (servicesString != null) {
+                showSellersOnMap(bundle, servicesString);
                 return;
             }
         }
@@ -242,27 +242,27 @@ public class MainActivity extends AppCompatActivity implements
         startActivity(intent);
     }
 
-    private void showSellersOnMap(Bundle bundle, String sellersString) {
+    private void showSellersOnMap(Bundle bundle, String servicesString) {
         try {
-            if (sellersString != null) {
-                JSONArray sellers = new JSONArray(sellersString);
+            if (servicesString != null) {
+                JSONArray services = new JSONArray(servicesString);
 
                 // clearing previous sellers and showing latest
                 mMap.clear();
-                for (int i = 0; i < sellers.length(); i++) {
-                    JSONObject seller = sellers.getJSONObject(i);
-                    double latitude = seller.getDouble("latitude");
-                    double longitude = seller.getDouble("longitude");
-                    String name = seller.getString("name");
+                for (int i = 0; i < services.length(); i++) {
+                    JSONObject service = services.getJSONObject(i);
+                    double latitude = service.getDouble("latitude");
+                    double longitude = service.getDouble("longitude");
+                    String serviceName = service.getString("name");
                     LatLng sellerLatlng = new LatLng(latitude, longitude);
-                    JSONObject service = seller.getJSONArray("services").getJSONObject(0);
+                    JSONObject seller = service.getJSONObject("user");
                     mMap.addMarker(new MarkerOptions().position(sellerLatlng)
-                            .title(name)
-                            .snippet(service.getString("name"))
+                            .title(seller.getString("firstName"))
+                            .snippet(serviceName)
                             .icon(BitmapDescriptorFactory.fromResource(R.drawable.search_text_icon)));
 
                     // animate in last
-                    if (i == (sellers.length() - 1)) {
+                    if (i == (services.length() - 1)) {
                         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sellerLatlng, 10));
                     }
                 }
