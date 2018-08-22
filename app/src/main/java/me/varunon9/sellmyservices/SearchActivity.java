@@ -150,6 +150,7 @@ public class SearchActivity extends AppCompatActivity {
                             if (!fromSearchHistory) {
                                 SearchHistory searchHistory = new SearchHistory();
                                 searchHistory.setSearchText(searchText);
+                                // todo: make it async?
                                 searchHistoryService.createSearchHistory(searchHistory);
                             }
 

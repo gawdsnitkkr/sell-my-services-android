@@ -69,6 +69,15 @@ public class SellerServicesFragment extends Fragment {
                 protected Void doInBackground(Void... voids) {
                     ServiceService serviceService = new ServiceService(uiFragmentActivity.dbHelper);
                     List<Service> services = serviceService.getServices();
+
+                    // if serviceList is empty then show that no service exist with a dummy service
+                    if (services.isEmpty()) {
+                        Service dummyService = new Service();
+                        dummyService.setId(0);
+                        dummyService.setName("No service exist");
+                        dummyService.setDescription("Please add your services");
+                        services.add(dummyService);
+                    }
                     serviceList.addAll(services);
                     serviceItemRecyclerViewAdapter.notifyDataSetChanged();
                     return null;
