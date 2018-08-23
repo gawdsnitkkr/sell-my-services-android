@@ -45,14 +45,15 @@ public class SellerServicesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_service_item_list, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_service_item_list, container, false);
 
         uiFragmentActivity = ((UiFragmentActivity) getActivity());
 
         // Set the adapter
-        if (view instanceof RecyclerView) {
-            Context context = view.getContext();
-            RecyclerView recyclerView = (RecyclerView) view;
+        Context context = rootView.getContext();
+        RecyclerView recyclerView = rootView.findViewById(R.id.serviceListRecyclerView);
+
+        if (recyclerView instanceof RecyclerView) {
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
             final List<Service> serviceList = new ArrayList<>();
@@ -85,7 +86,7 @@ public class SellerServicesFragment extends Fragment {
             }.execute();
             recyclerView.setAdapter(serviceItemRecyclerViewAdapter);
         }
-        return view;
+        return rootView;
     }
 
 

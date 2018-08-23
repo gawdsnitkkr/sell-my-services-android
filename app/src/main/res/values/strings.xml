@@ -24,4 +24,9 @@
     <string name="server_client_id">
         283217089830-u2vrggeku555vel7m4rs3akk4lop045r.apps.googleusercontent.com
     </string>
+    <string name="title_activity_service">Your Services</string>
+    <string name="tab_text_service_add">Add New</string>
+    <string name="tab_text_service_edit">Edit</string>
+    <string name="tab_text_service_details">Details</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>

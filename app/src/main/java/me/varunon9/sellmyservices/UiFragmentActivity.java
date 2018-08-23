@@ -2,7 +2,6 @@ package me.varunon9.sellmyservices;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.location.Location;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -51,7 +50,7 @@ public class UiFragmentActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(LOG, "onCreate called");
-        setContentView(R.layout.activity_fragment);
+        setContentView(R.layout.activity_uifragment);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -242,14 +241,25 @@ public class UiFragmentActivity extends AppCompatActivity
 
     public void goToMainActivity() {
         Intent intent = new Intent(UiFragmentActivity.this, MainActivity.class);
+
         // clear history stack so that back button does no lead to UiFragmentActivity
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
-                | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 
     @Override
     public void onServiceListFragmentInteraction(Service service) {
-        System.out.println(service.toString());
+        Intent intent = new Intent(UiFragmentActivity.this, ServiceActivity.class);
+
+        // not sending dummy service
+        if (service.getId() > 0) {
+            intent.putExtra("service", service);
+        }
+        startActivity(intent);
+    }
+
+    public void goToServiceActivity(View view) {
+        Intent intent = new Intent(UiFragmentActivity.this, ServiceActivity.class);
+        startActivity(intent);
     }
 }

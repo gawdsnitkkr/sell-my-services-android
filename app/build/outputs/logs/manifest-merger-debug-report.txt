@@ -1,46 +1,46 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
-INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
-INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
-INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
-MERGED from [com.android.volley:volley:1.1.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/46aa2ac8b818cf53951b16f5554370bd/AndroidManifest.xml:2:1-11:12
-MERGED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:17:1-39:12
-MERGED from [com.android.support:cardview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/36ab25430eda6945ca44f05530db52f3/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/998f3f56e30022aaa58f832c53ce7f9a/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:appcompat-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/730e7313425241b522672e8d1a8a498c/AndroidManifest.xml:17:1-31:12
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/e6f2a4be285939e04194b4433276462c/AndroidManifest.xml:17:1-32:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/692d306df500ac779bf5ebfd6e0c878f/AndroidManifest.xml:2:1-11:12
-MERGED from [com.google.android.gms:play-services-auth-api-phone:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-15.0.1.aar/d43bba3a403939390367fc56e8da4ad5/AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.android.gms:play-services-auth-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-15.0.1.aar/56564f76a60972fc9cf5b318a78243bc/AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/a3b33648a128557f6daf9eff74255de6/AndroidManifest.xml:17:1-29:12
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/301845792df604a627a27ed32ee836e1/AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/eee3c96d143a78bafe3f48a6eff21b9f/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:transition:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/2face6450594f2525853c1acffd9c8f1/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-v4:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/6c5ca5361c8f467bb68d23948f6bc74c/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/b251736348f593d65b3b9f97aafdd41f/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/9ecf69ca34c52100f845f844600b0b11/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/8e4e30cf8de79334cb88bb9c364bca0d/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-media-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/57e3c4255c44cebd1c1fb18ef46f1959/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-fragment:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/d27992cb33a1b82029c4808a79ad938d/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-utils:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/555e81e596e1a48ad08580c2e85dc6d1/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-ui:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/0a030ccfb399c3aea9d49d050a792594/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/92363b9eadae0c6ad648d6bed801ea20/AndroidManifest.xml:17:1-31:12
-MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/9a4c1be06a86d223c0116d0f86d27b8f/AndroidManifest.xml:17:1-30:12
-INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
-INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
-INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
+ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
+INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
+INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
+INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
+MERGED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/b0c1fd944b88bf590f6adb9a9ae91f81/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:appcompat-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/25771a19ca3e361bca686eceab303eb0/AndroidManifest.xml:17:1-31:12
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/491f2602c8d83b077e1cb2b83c938e99/AndroidManifest.xml:17:1-32:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/ade3c5bba7c524ba3568cd9ae4a83d37/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/f1bd44f36e24c4e75acc62eb12789fa8/AndroidManifest.xml:17:1-39:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-15.0.1.aar/57ec2ffb5c705737a1432c1bf1c8041e/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-auth-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-15.0.1.aar/1b7291c93a99a5350bd1bf589579c6eb/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/349ca49a9a1e62b39e6069a1e53dd685/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/cb21f0ddfec642ecab28b1b29ae2d138/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/80f11818cdd7400d20124247d011dab1/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:transition:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/9ddae1a475881234be2913d062d5f190/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/40ce30f841c8448fa2671428a4342ed9/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/6ea259f0f36bf4d31e98b44f68016ea9/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.volley:volley:1.1.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/03a96d79b604132651f2837ed2def9f8/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:cardview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/30d375359aa946409da902ccbd6fa5d0/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/1ec042e30a8b4a56a00c908dbcb05e19/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/ff9d464cdfe8eda9603df05afdf5cc65/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/01da20713a2737573f5326b2d47516b3/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/e1cf36456759b444b3c6a799990fa03f/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/3d046656014ddb5174bfa9fc1f2aa8a5/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/94d441323e2f1d857836097e443a9578/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/51e878e5f945268568e091969a6143c2/AndroidManifest.xml:17:1-31:12
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/8dd4a7cd61bec6f0a5acdbe87d1a28d2/AndroidManifest.xml:17:1-30:12
+INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
+INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
+INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
 	package
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:3:5-41
 		INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
 		INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
-		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
+		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
 		INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
-		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-54:12
+		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:1-58:12
 		INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:2:11-69
@@ -50,60 +50,60 @@ ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/An
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:10:22-76
 uses-permission#android.permission.INTERNET
 ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:11:5-67
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/e6f2a4be285939e04194b4433276462c/AndroidManifest.xml:24:5-67
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/e6f2a4be285939e04194b4433276462c/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/491f2602c8d83b077e1cb2b83c938e99/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/491f2602c8d83b077e1cb2b83c938e99/AndroidManifest.xml:24:5-67
 	android:name
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:11:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:12:5-79
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/e6f2a4be285939e04194b4433276462c/AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/e6f2a4be285939e04194b4433276462c/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/491f2602c8d83b077e1cb2b83c938e99/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/491f2602c8d83b077e1cb2b83c938e99/AndroidManifest.xml:23:5-79
 	android:name
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:12:22-76
 application
-ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:14:5-52:19
-MERGED from [com.android.volley:volley:1.1.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/46aa2ac8b818cf53951b16f5554370bd/AndroidManifest.xml:9:5-20
-MERGED from [com.android.volley:volley:1.1.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/46aa2ac8b818cf53951b16f5554370bd/AndroidManifest.xml:9:5-20
-MERGED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:22:5-37:19
-MERGED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:22:5-37:19
-MERGED from [com.android.support:cardview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/36ab25430eda6945ca44f05530db52f3/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:cardview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/36ab25430eda6945ca44f05530db52f3/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/998f3f56e30022aaa58f832c53ce7f9a/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/998f3f56e30022aaa58f832c53ce7f9a/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:appcompat-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/730e7313425241b522672e8d1a8a498c/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:appcompat-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/730e7313425241b522672e8d1a8a498c/AndroidManifest.xml:25:5-29:19
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/e6f2a4be285939e04194b4433276462c/AndroidManifest.xml:30:5-20
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/e6f2a4be285939e04194b4433276462c/AndroidManifest.xml:30:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/692d306df500ac779bf5ebfd6e0c878f/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/692d306df500ac779bf5ebfd6e0c878f/AndroidManifest.xml:9:5-20
-MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/a3b33648a128557f6daf9eff74255de6/AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/a3b33648a128557f6daf9eff74255de6/AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/301845792df604a627a27ed32ee836e1/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/301845792df604a627a27ed32ee836e1/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/eee3c96d143a78bafe3f48a6eff21b9f/AndroidManifest.xml:22:5-26:19
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/eee3c96d143a78bafe3f48a6eff21b9f/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:transition:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/2face6450594f2525853c1acffd9c8f1/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:transition:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/2face6450594f2525853c1acffd9c8f1/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-v4:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/6c5ca5361c8f467bb68d23948f6bc74c/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-v4:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/6c5ca5361c8f467bb68d23948f6bc74c/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/b251736348f593d65b3b9f97aafdd41f/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/b251736348f593d65b3b9f97aafdd41f/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/9ecf69ca34c52100f845f844600b0b11/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/9ecf69ca34c52100f845f844600b0b11/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/8e4e30cf8de79334cb88bb9c364bca0d/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/8e4e30cf8de79334cb88bb9c364bca0d/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-media-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/57e3c4255c44cebd1c1fb18ef46f1959/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/57e3c4255c44cebd1c1fb18ef46f1959/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/d27992cb33a1b82029c4808a79ad938d/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/d27992cb33a1b82029c4808a79ad938d/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/555e81e596e1a48ad08580c2e85dc6d1/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/555e81e596e1a48ad08580c2e85dc6d1/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-ui:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/0a030ccfb399c3aea9d49d050a792594/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-ui:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/0a030ccfb399c3aea9d49d050a792594/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/92363b9eadae0c6ad648d6bed801ea20/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/92363b9eadae0c6ad648d6bed801ea20/AndroidManifest.xml:25:5-29:19
-MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/9a4c1be06a86d223c0116d0f86d27b8f/AndroidManifest.xml:24:5-28:19
-MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/9a4c1be06a86d223c0116d0f86d27b8f/AndroidManifest.xml:24:5-28:19
+ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:14:5-56:19
+MERGED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/b0c1fd944b88bf590f6adb9a9ae91f81/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/b0c1fd944b88bf590f6adb9a9ae91f81/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/25771a19ca3e361bca686eceab303eb0/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/25771a19ca3e361bca686eceab303eb0/AndroidManifest.xml:25:5-29:19
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/491f2602c8d83b077e1cb2b83c938e99/AndroidManifest.xml:30:5-20
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/491f2602c8d83b077e1cb2b83c938e99/AndroidManifest.xml:30:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/ade3c5bba7c524ba3568cd9ae4a83d37/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/ade3c5bba7c524ba3568cd9ae4a83d37/AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/f1bd44f36e24c4e75acc62eb12789fa8/AndroidManifest.xml:22:5-37:19
+MERGED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/f1bd44f36e24c4e75acc62eb12789fa8/AndroidManifest.xml:22:5-37:19
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/349ca49a9a1e62b39e6069a1e53dd685/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/349ca49a9a1e62b39e6069a1e53dd685/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/cb21f0ddfec642ecab28b1b29ae2d138/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/cb21f0ddfec642ecab28b1b29ae2d138/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/80f11818cdd7400d20124247d011dab1/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/80f11818cdd7400d20124247d011dab1/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:transition:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/9ddae1a475881234be2913d062d5f190/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:transition:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/9ddae1a475881234be2913d062d5f190/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/40ce30f841c8448fa2671428a4342ed9/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/40ce30f841c8448fa2671428a4342ed9/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/6ea259f0f36bf4d31e98b44f68016ea9/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/6ea259f0f36bf4d31e98b44f68016ea9/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.volley:volley:1.1.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/03a96d79b604132651f2837ed2def9f8/AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/03a96d79b604132651f2837ed2def9f8/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:cardview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/30d375359aa946409da902ccbd6fa5d0/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:cardview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/30d375359aa946409da902ccbd6fa5d0/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/1ec042e30a8b4a56a00c908dbcb05e19/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/1ec042e30a8b4a56a00c908dbcb05e19/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/ff9d464cdfe8eda9603df05afdf5cc65/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/ff9d464cdfe8eda9603df05afdf5cc65/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/01da20713a2737573f5326b2d47516b3/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/01da20713a2737573f5326b2d47516b3/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/e1cf36456759b444b3c6a799990fa03f/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/e1cf36456759b444b3c6a799990fa03f/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/3d046656014ddb5174bfa9fc1f2aa8a5/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/3d046656014ddb5174bfa9fc1f2aa8a5/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/94d441323e2f1d857836097e443a9578/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/94d441323e2f1d857836097e443a9578/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/51e878e5f945268568e091969a6143c2/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/51e878e5f945268568e091969a6143c2/AndroidManifest.xml:25:5-29:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/8dd4a7cd61bec6f0a5acdbe87d1a28d2/AndroidManifest.xml:24:5-28:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/8dd4a7cd61bec6f0a5acdbe87d1a28d2/AndroidManifest.xml:24:5-28:19
 	android:supportsRtl
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:19:9-35
 	android:label
@@ -130,7 +130,7 @@ ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/An
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:37:13-56
 	android:name
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:35:13-41
-intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:38:13-42:29
 action#android.intent.action.MAIN
 ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:39:17-69
@@ -156,60 +156,68 @@ ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/An
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:51:13-56
 	android:name
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:49:13-47
+activity#me.varunon9.sellmyservices.ServiceActivity
+ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:52:9-55:68
+	android:label
+		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:54:13-59
+	android:theme
+		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:55:13-56
+	android:name
+		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml:53:13-44
 uses-sdk
 INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
 INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
-MERGED from [com.android.volley:volley:1.1.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/46aa2ac8b818cf53951b16f5554370bd/AndroidManifest.xml:7:5-43
-MERGED from [com.android.volley:volley:1.1.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/46aa2ac8b818cf53951b16f5554370bd/AndroidManifest.xml:7:5-43
-MERGED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/36ab25430eda6945ca44f05530db52f3/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/36ab25430eda6945ca44f05530db52f3/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/998f3f56e30022aaa58f832c53ce7f9a/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/998f3f56e30022aaa58f832c53ce7f9a/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:appcompat-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/730e7313425241b522672e8d1a8a498c/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:appcompat-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/730e7313425241b522672e8d1a8a498c/AndroidManifest.xml:21:5-23:78
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/e6f2a4be285939e04194b4433276462c/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/e6f2a4be285939e04194b4433276462c/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/692d306df500ac779bf5ebfd6e0c878f/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/692d306df500ac779bf5ebfd6e0c878f/AndroidManifest.xml:5:5-7:41
-MERGED from [com.google.android.gms:play-services-auth-api-phone:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-15.0.1.aar/d43bba3a403939390367fc56e8da4ad5/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth-api-phone:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-15.0.1.aar/d43bba3a403939390367fc56e8da4ad5/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-15.0.1.aar/56564f76a60972fc9cf5b318a78243bc/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-15.0.1.aar/56564f76a60972fc9cf5b318a78243bc/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/a3b33648a128557f6daf9eff74255de6/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/a3b33648a128557f6daf9eff74255de6/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/301845792df604a627a27ed32ee836e1/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/301845792df604a627a27ed32ee836e1/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/eee3c96d143a78bafe3f48a6eff21b9f/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/eee3c96d143a78bafe3f48a6eff21b9f/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/2face6450594f2525853c1acffd9c8f1/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/2face6450594f2525853c1acffd9c8f1/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/6c5ca5361c8f467bb68d23948f6bc74c/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-v4:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/6c5ca5361c8f467bb68d23948f6bc74c/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/b251736348f593d65b3b9f97aafdd41f/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/b251736348f593d65b3b9f97aafdd41f/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/9ecf69ca34c52100f845f844600b0b11/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/9ecf69ca34c52100f845f844600b0b11/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/8e4e30cf8de79334cb88bb9c364bca0d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/8e4e30cf8de79334cb88bb9c364bca0d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/57e3c4255c44cebd1c1fb18ef46f1959/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-media-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/57e3c4255c44cebd1c1fb18ef46f1959/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-fragment:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/d27992cb33a1b82029c4808a79ad938d/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-fragment:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/d27992cb33a1b82029c4808a79ad938d/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-core-utils:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/555e81e596e1a48ad08580c2e85dc6d1/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-utils:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/555e81e596e1a48ad08580c2e85dc6d1/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-ui:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/0a030ccfb399c3aea9d49d050a792594/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-ui:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/0a030ccfb399c3aea9d49d050a792594/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/92363b9eadae0c6ad648d6bed801ea20/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/92363b9eadae0c6ad648d6bed801ea20/AndroidManifest.xml:21:5-23:58
-MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/9a4c1be06a86d223c0116d0f86d27b8f/AndroidManifest.xml:20:5-22:41
-MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/9a4c1be06a86d223c0116d0f86d27b8f/AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/b0c1fd944b88bf590f6adb9a9ae91f81/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/b0c1fd944b88bf590f6adb9a9ae91f81/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/25771a19ca3e361bca686eceab303eb0/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/25771a19ca3e361bca686eceab303eb0/AndroidManifest.xml:21:5-23:78
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/491f2602c8d83b077e1cb2b83c938e99/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/491f2602c8d83b077e1cb2b83c938e99/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/ade3c5bba7c524ba3568cd9ae4a83d37/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/ade3c5bba7c524ba3568cd9ae4a83d37/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/f1bd44f36e24c4e75acc62eb12789fa8/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/f1bd44f36e24c4e75acc62eb12789fa8/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-15.0.1.aar/57ec2ffb5c705737a1432c1bf1c8041e/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-15.0.1.aar/57ec2ffb5c705737a1432c1bf1c8041e/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-15.0.1.aar/1b7291c93a99a5350bd1bf589579c6eb/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-15.0.1.aar/1b7291c93a99a5350bd1bf589579c6eb/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/349ca49a9a1e62b39e6069a1e53dd685/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/349ca49a9a1e62b39e6069a1e53dd685/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/cb21f0ddfec642ecab28b1b29ae2d138/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/cb21f0ddfec642ecab28b1b29ae2d138/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/80f11818cdd7400d20124247d011dab1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/80f11818cdd7400d20124247d011dab1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/9ddae1a475881234be2913d062d5f190/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/9ddae1a475881234be2913d062d5f190/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/40ce30f841c8448fa2671428a4342ed9/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/40ce30f841c8448fa2671428a4342ed9/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/6ea259f0f36bf4d31e98b44f68016ea9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/6ea259f0f36bf4d31e98b44f68016ea9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.volley:volley:1.1.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/03a96d79b604132651f2837ed2def9f8/AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/03a96d79b604132651f2837ed2def9f8/AndroidManifest.xml:7:5-43
+MERGED from [com.android.support:cardview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/30d375359aa946409da902ccbd6fa5d0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/30d375359aa946409da902ccbd6fa5d0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/1ec042e30a8b4a56a00c908dbcb05e19/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/1ec042e30a8b4a56a00c908dbcb05e19/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/ff9d464cdfe8eda9603df05afdf5cc65/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/ff9d464cdfe8eda9603df05afdf5cc65/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/01da20713a2737573f5326b2d47516b3/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/01da20713a2737573f5326b2d47516b3/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/e1cf36456759b444b3c6a799990fa03f/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/e1cf36456759b444b3c6a799990fa03f/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/3d046656014ddb5174bfa9fc1f2aa8a5/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/3d046656014ddb5174bfa9fc1f2aa8a5/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/94d441323e2f1d857836097e443a9578/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/94d441323e2f1d857836097e443a9578/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/51e878e5f945268568e091969a6143c2/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/51e878e5f945268568e091969a6143c2/AndroidManifest.xml:21:5-23:58
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/8dd4a7cd61bec6f0a5acdbe87d1a28d2/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/8dd4a7cd61bec6f0a5acdbe87d1a28d2/AndroidManifest.xml:20:5-22:41
 INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
 INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
 	tools:overrideLibrary
-		ADDED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/998f3f56e30022aaa58f832c53ce7f9a/AndroidManifest.xml:23:9-59
+		ADDED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/b0c1fd944b88bf590f6adb9a9ae91f81/AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
 		INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
@@ -218,77 +226,77 @@ INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main
 		INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
 		ADDED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
 		INJECTED from /home/varunkumar/AndroidStudioProjects/SellMyServices/app/src/main/AndroidManifest.xml
-activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
-ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:23:9-27:75
-	android:excludeFromRecents
-		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:25:13-46
-	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:26:13-37
-	android:theme
-		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:27:13-72
-	android:name
-		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:24:13-93
-service#com.google.android.gms.auth.api.signin.RevocationBoundService
-ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:33:9-36:110
-	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:35:13-36
-	android:permission
-		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:36:13-107
-	android:name
-		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/7a64dbe1bce5103a02a161602a654e63/AndroidManifest.xml:34:13-89
 meta-data#android.support.VERSION
-ADDED from [com.android.support:cardview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/36ab25430eda6945ca44f05530db52f3/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/998f3f56e30022aaa58f832c53ce7f9a/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/998f3f56e30022aaa58f832c53ce7f9a/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:appcompat-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/730e7313425241b522672e8d1a8a498c/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:appcompat-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/730e7313425241b522672e8d1a8a498c/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:transition:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/2face6450594f2525853c1acffd9c8f1/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:transition:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/2face6450594f2525853c1acffd9c8f1/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-v4:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/6c5ca5361c8f467bb68d23948f6bc74c/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-v4:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/6c5ca5361c8f467bb68d23948f6bc74c/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/b251736348f593d65b3b9f97aafdd41f/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/b251736348f593d65b3b9f97aafdd41f/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/9ecf69ca34c52100f845f844600b0b11/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/9ecf69ca34c52100f845f844600b0b11/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/8e4e30cf8de79334cb88bb9c364bca0d/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/8e4e30cf8de79334cb88bb9c364bca0d/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-media-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/57e3c4255c44cebd1c1fb18ef46f1959/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-media-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/57e3c4255c44cebd1c1fb18ef46f1959/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/d27992cb33a1b82029c4808a79ad938d/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/d27992cb33a1b82029c4808a79ad938d/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-utils:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/555e81e596e1a48ad08580c2e85dc6d1/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-utils:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/555e81e596e1a48ad08580c2e85dc6d1/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/0a030ccfb399c3aea9d49d050a792594/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/0a030ccfb399c3aea9d49d050a792594/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/92363b9eadae0c6ad648d6bed801ea20/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/92363b9eadae0c6ad648d6bed801ea20/AndroidManifest.xml:26:9-28:38
+ADDED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/b0c1fd944b88bf590f6adb9a9ae91f81/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:appcompat-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/25771a19ca3e361bca686eceab303eb0/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:appcompat-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/25771a19ca3e361bca686eceab303eb0/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:transition:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/9ddae1a475881234be2913d062d5f190/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:transition:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/9ddae1a475881234be2913d062d5f190/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-v4:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/40ce30f841c8448fa2671428a4342ed9/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-v4:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/40ce30f841c8448fa2671428a4342ed9/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/6ea259f0f36bf4d31e98b44f68016ea9/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/6ea259f0f36bf4d31e98b44f68016ea9/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:cardview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/30d375359aa946409da902ccbd6fa5d0/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:cardview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/30d375359aa946409da902ccbd6fa5d0/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/1ec042e30a8b4a56a00c908dbcb05e19/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/1ec042e30a8b4a56a00c908dbcb05e19/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/ff9d464cdfe8eda9603df05afdf5cc65/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/ff9d464cdfe8eda9603df05afdf5cc65/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/01da20713a2737573f5326b2d47516b3/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/01da20713a2737573f5326b2d47516b3/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/e1cf36456759b444b3c6a799990fa03f/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/e1cf36456759b444b3c6a799990fa03f/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/3d046656014ddb5174bfa9fc1f2aa8a5/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/3d046656014ddb5174bfa9fc1f2aa8a5/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/94d441323e2f1d857836097e443a9578/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/94d441323e2f1d857836097e443a9578/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/51e878e5f945268568e091969a6143c2/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/51e878e5f945268568e091969a6143c2/AndroidManifest.xml:26:9-28:38
 	android:value
-		ADDED from [com.android.support:cardview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/36ab25430eda6945ca44f05530db52f3/AndroidManifest.xml:25:13-35
+		ADDED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/b0c1fd944b88bf590f6adb9a9ae91f81/AndroidManifest.xml:28:13-35
 	android:name
-		ADDED from [com.android.support:cardview-v7:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/36ab25430eda6945ca44f05530db52f3/AndroidManifest.xml:24:13-51
+		ADDED from [com.android.support:design:26.1.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/b0c1fd944b88bf590f6adb9a9ae91f81/AndroidManifest.xml:27:13-51
 uses-feature#0x00020000
-ADDED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/e6f2a4be285939e04194b4433276462c/AndroidManifest.xml:26:5-28:35
+ADDED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/491f2602c8d83b077e1cb2b83c938e99/AndroidManifest.xml:26:5-28:35
 	android:glEsVersion
-		ADDED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/e6f2a4be285939e04194b4433276462c/AndroidManifest.xml:27:9-41
+		ADDED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/491f2602c8d83b077e1cb2b83c938e99/AndroidManifest.xml:27:9-41
 	android:required
-		ADDED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/e6f2a4be285939e04194b4433276462c/AndroidManifest.xml:28:9-32
-activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/a3b33648a128557f6daf9eff74255de6/AndroidManifest.xml:23:9-26:75
+		ADDED from [com.google.android.gms:play-services-maps:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/491f2602c8d83b077e1cb2b83c938e99/AndroidManifest.xml:28:9-32
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/f1bd44f36e24c4e75acc62eb12789fa8/AndroidManifest.xml:23:9-27:75
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/f1bd44f36e24c4e75acc62eb12789fa8/AndroidManifest.xml:25:13-46
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/a3b33648a128557f6daf9eff74255de6/AndroidManifest.xml:25:13-37
+		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/f1bd44f36e24c4e75acc62eb12789fa8/AndroidManifest.xml:26:13-37
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/a3b33648a128557f6daf9eff74255de6/AndroidManifest.xml:26:13-72
+		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/f1bd44f36e24c4e75acc62eb12789fa8/AndroidManifest.xml:27:13-72
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/a3b33648a128557f6daf9eff74255de6/AndroidManifest.xml:24:13-79
+		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/f1bd44f36e24c4e75acc62eb12789fa8/AndroidManifest.xml:24:13-93
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/f1bd44f36e24c4e75acc62eb12789fa8/AndroidManifest.xml:33:9-36:110
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/f1bd44f36e24c4e75acc62eb12789fa8/AndroidManifest.xml:35:13-36
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/f1bd44f36e24c4e75acc62eb12789fa8/AndroidManifest.xml:36:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/f1bd44f36e24c4e75acc62eb12789fa8/AndroidManifest.xml:34:13-89
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/349ca49a9a1e62b39e6069a1e53dd685/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/349ca49a9a1e62b39e6069a1e53dd685/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/349ca49a9a1e62b39e6069a1e53dd685/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/349ca49a9a1e62b39e6069a1e53dd685/AndroidManifest.xml:24:13-79
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/eee3c96d143a78bafe3f48a6eff21b9f/AndroidManifest.xml:23:9-25:69
+ADDED from [com.google.android.gms:play-services-basement:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/80f11818cdd7400d20124247d011dab1/AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/eee3c96d143a78bafe3f48a6eff21b9f/AndroidManifest.xml:25:13-66
+		ADDED from [com.google.android.gms:play-services-basement:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/80f11818cdd7400d20124247d011dab1/AndroidManifest.xml:25:13-66
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/eee3c96d143a78bafe3f48a6eff21b9f/AndroidManifest.xml:24:13-58
+		ADDED from [com.google.android.gms:play-services-basement:15.0.1] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/80f11818cdd7400d20124247d011dab1/AndroidManifest.xml:24:13-58
 meta-data#android.arch.lifecycle.VERSION
-ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/9a4c1be06a86d223c0116d0f86d27b8f/AndroidManifest.xml:25:9-27:47
+ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/8dd4a7cd61bec6f0a5acdbe87d1a28d2/AndroidManifest.xml:25:9-27:47
 	android:value
-		ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/9a4c1be06a86d223c0116d0f86d27b8f/AndroidManifest.xml:27:13-44
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/8dd4a7cd61bec6f0a5acdbe87d1a28d2/AndroidManifest.xml:27:13-44
 	android:name
-		ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/9a4c1be06a86d223c0116d0f86d27b8f/AndroidManifest.xml:26:13-58
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/varunkumar/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/8dd4a7cd61bec6f0a5acdbe87d1a28d2/AndroidManifest.xml:26:13-58

@@ -7,7 +7,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="me.varunon9.sellmyservices.UiFragmentActivity"
     android:id="@+id/uiFragmentActivityContent"
-    tools:showIn="@layout/activity_fragment">
+    tools:showIn="@layout/activity_uifragment">
 
     <FrameLayout
         android:layout_width="match_parent"

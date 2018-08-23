@@ -1,10 +1,12 @@
 package me.varunon9.sellmyservices.db.models;
 
+import java.io.Serializable;
+
 /**
  * Created by varunkumar on 18/8/18.
  */
 
-public class Service {
+public class Service implements Serializable {
 
     private int id;
     private String name;
