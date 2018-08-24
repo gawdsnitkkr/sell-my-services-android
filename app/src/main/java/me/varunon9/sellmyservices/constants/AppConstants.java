@@ -40,6 +40,7 @@ public final class AppConstants {
         public static final String LOGIN = DOMAIN + "/login/";
         public static final String SIGNUP = DOMAIN + "/signup/";
         public static final String USER_PROFILE = DOMAIN + "/users/:id";
+        public static final String SERVICES = DOMAIN + "/auth/services";
     }
 
     public static final String SHARED_PREFERENCES_PREFIX = "me.varunon9.sellmyservices";
@@ -73,5 +74,19 @@ public final class AppConstants {
         public static final String GENDER = "gender";
         public static final String EMAIL = "email";
         public static final String PROFILE_PIC = "profilePic";
+    }
+
+    public static final String CHOOSE_LOCATION = "Choose location";
+
+    public static class Service {
+        private Service() {
+        }
+
+        public static final String NAME = "name";
+        public static final String DESCRIPTION = "description";
+        public static final String TAGS = "tags";
+        public static final String LOCATION = "location";
+        public static final String LATITUDE = "latitude";
+        public static final String LONGITUDE = "longitude";
     }
 }

@@ -37,7 +37,6 @@ import me.varunon9.sellmyservices.utils.AjaxUtility;
 public class UiFragmentActivity extends AppCompatActivity
         implements SellerServicesFragment.OnServiceListFragmentInteractionListener {
 
-    private static final String LOG = "UiFragmentActivity";
     public Singleton singleton;
     private GoogleSignInClient mGoogleSignInClient;
     private  int SIGN_IN_REQUEST_CODE = 0;
@@ -49,7 +48,7 @@ public class UiFragmentActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(LOG, "onCreate called");
+        Log.d(TAG, "onCreate called");
         setContentView(R.layout.activity_uifragment);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -72,7 +71,7 @@ public class UiFragmentActivity extends AppCompatActivity
                 fragmentTransaction.add(R.id.frameLayout, fragment);
                 fragmentTransaction.commit();
             } else {
-                Log.e(LOG, "Null Fragment to display");
+                Log.e(TAG, "Null Fragment to display");
             }
         }
 
@@ -93,7 +92,7 @@ public class UiFragmentActivity extends AppCompatActivity
     @Override
     public void onResume() {
         super.onResume();
-        Log.d(LOG, "onResume called");
+        Log.d(TAG, "onResume called");
     }
 
     @Override
