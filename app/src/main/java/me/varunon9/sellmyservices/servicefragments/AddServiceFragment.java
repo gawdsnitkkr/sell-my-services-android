@@ -61,7 +61,7 @@ public class AddServiceFragment extends Fragment implements View.OnClickListener
 
         SupportPlaceAutocompleteFragment placeAutocompleteFragment = (SupportPlaceAutocompleteFragment)
                 getChildFragmentManager()
-                        .findFragmentById(R.id.place_autocomplete_fragment);
+                        .findFragmentById(R.id.place_autocomplete_fragment_addTab);
         placeAutocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
             public void onPlaceSelected(Place place) {

@@ -82,9 +82,13 @@ public final class AppConstants {
         private Service() {
         }
 
+        public static final String ID = "id";
         public static final String NAME = "name";
+        public static final String TYPE = "type";
         public static final String DESCRIPTION = "description";
         public static final String TAGS = "tags";
+        public static final String RATING = "rating";
+        public static final String RATING_COUNT = "ratingCount";
         public static final String LOCATION = "location";
         public static final String LATITUDE = "latitude";
         public static final String LONGITUDE = "longitude";

@@ -21,6 +21,7 @@ import org.json.JSONObject;
 import me.varunon9.sellmyservices.constants.AppConstants;
 import me.varunon9.sellmyservices.db.DbHelper;
 import me.varunon9.sellmyservices.db.models.Service;
+import me.varunon9.sellmyservices.db.services.ServiceService;
 import me.varunon9.sellmyservices.servicefragments.AddServiceFragment;
 import me.varunon9.sellmyservices.servicefragments.EditServiceFragment;
 import me.varunon9.sellmyservices.servicefragments.ServiceDetailsFragment;
@@ -45,12 +46,13 @@ public class ServiceActivity extends AppCompatActivity {
     private ViewPager mViewPager;
 
     // this object will be used in details and edit fragments
-    private Service service;
+    public Service service;
     public Singleton singleton;
     private String TAG = "ServiceActivity";
     private ProgressDialog progressDialog;
     public AjaxUtility ajaxUtility;
     public DbHelper dbHelper;
+    private ServiceService serviceService;
 
     private static final int SERVICE_DETAILS_TAB = 0;
     private static final int ADD_SERVICE_TAB = 1;
@@ -88,6 +90,7 @@ public class ServiceActivity extends AppCompatActivity {
 
         ajaxUtility = new AjaxUtility(getApplicationContext());
         dbHelper = new DbHelper(getApplicationContext());
+        serviceService = new ServiceService(dbHelper);
     }
 
 
@@ -175,15 +178,16 @@ public class ServiceActivity extends AppCompatActivity {
         Snackbar.make(parentLayout, message, Snackbar.LENGTH_LONG).show();
     }
 
-    public void addService(Service service) {
+    public void addService(Service newService) {
         JSONObject serviceObject = new JSONObject();
         showProgressDialog("Creating Service", "Please wait", false);
         try {
-            serviceObject.put(AppConstants.Service.NAME, service.getName());
-            serviceObject.put(AppConstants.Service.DESCRIPTION, service.getDescription());
-            serviceObject.put(AppConstants.Service.TAGS, service.getTags());
-            serviceObject.put(AppConstants.Service.LATITUDE, service.getLatitude());
-            serviceObject.put(AppConstants.Service.LONGITUDE, service.getLongitude());
+            serviceObject.put(AppConstants.Service.NAME, newService.getName());
+            serviceObject.put(AppConstants.Service.DESCRIPTION, newService.getDescription());
+            serviceObject.put(AppConstants.Service.TAGS, newService.getTags());
+            serviceObject.put(AppConstants.Service.LATITUDE, newService.getLatitude());
+            serviceObject.put(AppConstants.Service.LONGITUDE, newService.getLongitude());
+            serviceObject.put(AppConstants.Service.LOCATION, newService.getLocation());
 
             String url = AppConstants.Urls.SERVICES;
 
@@ -193,9 +197,14 @@ public class ServiceActivity extends AppCompatActivity {
                     try {
                         JSONObject createdServiceObject = response.getJSONObject("result");
 
-                        // todo: save this service to SQLite and switch to detailView
+                        // updating ServiceActivity.service with newly created service
+                        service = getServiceFromJsonObject(createdServiceObject);
+                        serviceService.createService(service);
+
+                        // switching to serviceDetails view which will display newly created service
+                        mViewPager.setCurrentItem(SERVICE_DETAILS_TAB);
+
                         showMessage("Service added successfully");
-                        Log.d(TAG, createdServiceObject.toString());
                     } catch (Exception e) {
                         e.printStackTrace();
                         showMessage("Parsing error");
@@ -220,5 +229,77 @@ public class ServiceActivity extends AppCompatActivity {
         } finally {
             dismissProgressDialog();
         }
+    }
+
+    public void updateService(Service updatedService) {
+        JSONObject serviceObject = new JSONObject();
+        showProgressDialog("Saving details", "Please wait", false);
+        try {
+            serviceObject.put(AppConstants.Service.ID, updatedService.getId());
+            serviceObject.put(AppConstants.Service.NAME, updatedService.getName());
+            serviceObject.put(AppConstants.Service.DESCRIPTION, updatedService.getDescription());
+            serviceObject.put(AppConstants.Service.TAGS, updatedService.getTags());
+            serviceObject.put(AppConstants.Service.LATITUDE, updatedService.getLatitude());
+            serviceObject.put(AppConstants.Service.LONGITUDE, updatedService.getLongitude());
+            serviceObject.put(AppConstants.Service.LOCATION, updatedService.getLocation());
+
+            String url = AppConstants.Urls.SERVICES;
+
+            ajaxUtility.makeHttpRequest(url, "PUT", serviceObject, new AjaxCallback() {
+                @Override
+                public void onSuccess(JSONObject response) {
+                    try {
+                        JSONObject updatedServiceObject = response.getJSONObject("result");
+
+                        // updating ServiceActivity.service with newly updated service
+                        service = getServiceFromJsonObject(updatedServiceObject);
+                        serviceService.updateService(service);
+
+                        // switching to serviceDetails view which will display newly created service
+                        mViewPager.setCurrentItem(SERVICE_DETAILS_TAB);
+
+                        showMessage("Service updated successfully");
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        showMessage("Parsing error");
+                    }
+                }
+
+                @Override
+                public void onError(JSONObject response) {
+                    try {
+                        String message = response.getString("message");
+                        int statusCode = response.getInt("statusCode");
+                        showMessage(statusCode + ": " + message);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        showMessage(AppConstants.GENERIC_ERROR_MESSAGE);
+                    }
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+            showMessage(AppConstants.GENERIC_ERROR_MESSAGE);
+        } finally {
+            dismissProgressDialog();
+        }
+    }
+
+    private Service getServiceFromJsonObject(JSONObject serviceObject) {
+        Service service = new Service();
+        try {
+            service.setId(serviceObject.getInt(AppConstants.Service.ID));
+            service.setName(serviceObject.getString(AppConstants.Service.NAME));
+            service.setDescription(serviceObject.getString(AppConstants.Service.DESCRIPTION));
+            service.setTags(serviceObject.getString(AppConstants.Service.TAGS));
+            service.setRating(serviceObject.getDouble(AppConstants.Service.RATING));
+            service.setRatingCount(serviceObject.getInt(AppConstants.Service.RATING_COUNT));
+            service.setLatitude(serviceObject.getDouble(AppConstants.Service.LATITUDE));
+            service.setLongitude(serviceObject.getDouble(AppConstants.Service.LONGITUDE));
+            service.setLocation(serviceObject.getString(AppConstants.Service.LOCATION));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return service;
     }
 }

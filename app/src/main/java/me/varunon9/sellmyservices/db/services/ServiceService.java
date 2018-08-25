@@ -5,6 +5,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +30,7 @@ public class ServiceService {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
 
+        values.put(dbHelper.COLUMN_ID, service.getId());
         values.put(dbHelper.COLUMN_SERVICE_NAME, service.getName());
         values.put(dbHelper.COLUMN_SERVICE_TYPE, service.getType());
         values.put(dbHelper.COLUMN_SERVICE_DESCRIPTION, service.getDescription());
@@ -80,7 +83,9 @@ public class ServiceService {
         values.put(dbHelper.COLUMN_UPDATED_AT, service.getUpdatedAt());
 
         long serviceId = db.update(dbHelper.TABLE_SERVICE, values,
-                "_id = ?", new String[]{String.valueOf(service.getId())});
+                "id = ?", new String[]{String.valueOf(service.getId())});
+
+        Log.d(TAG, "updated service: " + service.getName());
         return serviceId;
     }
 
@@ -135,6 +140,16 @@ public class ServiceService {
 
         db.close();
         return serviceList;
+    }
+
+    public int removeAllServices() {
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        // To remove all rows and get a count pass "1" as the whereClause.
+        int count = db.delete(dbHelper.TABLE_SERVICE, "1", null);
+        db.close();
+        Log.d(TAG, "Deleted " + count + " rows");
+        return count;
     }
 
     private Service getServiceFromCursor(Cursor cursor) {

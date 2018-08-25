@@ -29,6 +29,9 @@ public class Singleton {
     private String PROFILE_DETAILS = "profileDetails";
     private String TAG = "Singleton";
 
+    // this will be called only one time to sync server database to SQLite
+    private boolean fetchServicesFromServer = true;
+
     private Singleton(Context context) {
         this.context = context;
         requestQueue = getRequestQueue();
@@ -213,5 +216,12 @@ public class Singleton {
         SharedPreferences sharedPreferences =
                 context.getSharedPreferences(sharedPreferencesFileName, Context.MODE_PRIVATE);
         return sharedPreferences;
+    }
+
+    // after first time value will be false
+    public boolean isFetchServicesFromServer() {
+        boolean requiredValue = fetchServicesFromServer;
+        fetchServicesFromServer = false;
+        return requiredValue;
     }
 }

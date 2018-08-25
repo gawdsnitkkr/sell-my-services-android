@@ -6,18 +6,24 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import me.varunon9.sellmyservices.R;
 import me.varunon9.sellmyservices.UiFragmentActivity;
+import me.varunon9.sellmyservices.constants.AppConstants;
 import me.varunon9.sellmyservices.db.DbHelper;
 import me.varunon9.sellmyservices.db.models.Service;
 import me.varunon9.sellmyservices.db.services.ServiceService;
+import me.varunon9.sellmyservices.utils.AjaxCallback;
 
 /**
  * A fragment representing a list of Items.
@@ -29,6 +35,7 @@ public class SellerServicesFragment extends Fragment {
 
     private OnServiceListFragmentInteractionListener mListener;
     private UiFragmentActivity uiFragmentActivity;
+    private String TAG = "SellerServicesFragment";
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -59,31 +66,36 @@ public class SellerServicesFragment extends Fragment {
             final List<Service> serviceList = new ArrayList<>();
             final ServiceItemRecyclerViewAdapter serviceItemRecyclerViewAdapter =
                     new ServiceItemRecyclerViewAdapter(serviceList, mListener);
+            final ServiceService serviceService =
+                    new ServiceService(uiFragmentActivity.dbHelper);
 
-            /**
-             * A seller practically will not have more than 10-15 services
-             * so db query to get services from sqlite will take roughly 20-30 ms
-             * So ignoring Android memory leak warning
-             */
-            new AsyncTask<Void, Void, Void>() {
-                @Override
-                protected Void doInBackground(Void... voids) {
-                    ServiceService serviceService = new ServiceService(uiFragmentActivity.dbHelper);
-                    List<Service> services = serviceService.getServices();
+            if (uiFragmentActivity.singleton.isFetchServicesFromServer()) {
+                /**
+                 * get services from server, override to SQLite and populate listAdapter
+                 */
+                fetchServicesFromServer(serviceItemRecyclerViewAdapter,
+                        serviceService, serviceList);
+            } else {
+                /**
+                 * A seller practically will not have more than 10-15 services
+                 * so db query to get services from SQLite will take roughly 20-30 ms
+                 * So ignoring Android memory leak warning
+                 */
+                new AsyncTask<Void, Void, Void>() {
+                    @Override
+                    protected Void doInBackground(Void... voids) {
+                        List<Service> services = serviceService.getServices();
+                        serviceList.addAll(services);
 
-                    // if serviceList is empty then show that no service exist with a dummy service
-                    if (services.isEmpty()) {
-                        Service dummyService = new Service();
-                        dummyService.setId(0);
-                        dummyService.setName("No service exist");
-                        dummyService.setDescription("Please add your services");
-                        services.add(dummyService);
+                        // if serviceList is empty then show that no service exist with a dummy service
+                        if (serviceList.isEmpty()) {
+                            addDummyService(serviceList);
+                        }
+                        serviceItemRecyclerViewAdapter.notifyDataSetChanged();
+                        return null;
                     }
-                    serviceList.addAll(services);
-                    serviceItemRecyclerViewAdapter.notifyDataSetChanged();
-                    return null;
-                }
-            }.execute();
+                }.execute();
+            }
             recyclerView.setAdapter(serviceItemRecyclerViewAdapter);
         }
         return rootView;
@@ -119,5 +131,90 @@ public class SellerServicesFragment extends Fragment {
      */
     public interface OnServiceListFragmentInteractionListener {
         void onServiceListFragmentInteraction(Service service);
+    }
+
+    // will be called only one time
+    private void fetchServicesFromServer(
+            final ServiceItemRecyclerViewAdapter serviceItemRecyclerViewAdapter,
+            final ServiceService serviceService, final List<Service> serviceList) {
+        uiFragmentActivity.showProgressDialog("Getting Services",
+                "Please wait", false);
+        try {
+            String url = AppConstants.Urls.SERVICES;
+
+            uiFragmentActivity.ajaxUtility.makeHttpRequest(url, "GET", null,
+                    new AjaxCallback() {
+                @Override
+                public void onSuccess(JSONObject response) {
+                    try {
+                        JSONArray serviceArray = response.getJSONArray("result");
+                        Log.d(TAG, serviceArray.toString());
+
+                        // clear SQLite db
+                        serviceService.removeAllServices();
+
+                        // add services to SQLite
+                        for (int i = 0; i < serviceArray.length(); i++) {
+                            JSONObject serviceObject = serviceArray.getJSONObject(i);
+                            Service service = getServiceFromJsonObject(serviceObject);
+                            serviceList.add(service);
+
+                            serviceService.createService(service);
+                        }
+
+                        if (serviceList.isEmpty()) {
+                            addDummyService(serviceList);
+                        }
+                        serviceItemRecyclerViewAdapter.notifyDataSetChanged();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        uiFragmentActivity.showMessage("Parsing error");
+                    }
+                }
+
+                @Override
+                public void onError(JSONObject response) {
+                    try {
+                        String message = response.getString("message");
+                        int statusCode = response.getInt("statusCode");
+                        uiFragmentActivity.showMessage(statusCode + ": " + message);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        uiFragmentActivity.showMessage(AppConstants.GENERIC_ERROR_MESSAGE);
+                    }
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+            uiFragmentActivity.showMessage(AppConstants.GENERIC_ERROR_MESSAGE);
+        } finally {
+            uiFragmentActivity.dismissProgressDialog();
+        }
+    }
+
+    private Service getServiceFromJsonObject(JSONObject serviceObject) {
+        Service service = new Service();
+        try {
+            service.setId(serviceObject.getInt(AppConstants.Service.ID));
+            service.setName(serviceObject.getString(AppConstants.Service.NAME));
+            service.setDescription(serviceObject.getString(AppConstants.Service.DESCRIPTION));
+            service.setTags(serviceObject.getString(AppConstants.Service.TAGS));
+            service.setRating(serviceObject.getDouble(AppConstants.Service.RATING));
+            service.setRatingCount(serviceObject.getInt(AppConstants.Service.RATING_COUNT));
+            service.setLatitude(serviceObject.getDouble(AppConstants.Service.LATITUDE));
+            service.setLongitude(serviceObject.getDouble(AppConstants.Service.LONGITUDE));
+            service.setLocation(serviceObject.getString(AppConstants.Service.LOCATION));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return service;
+    }
+
+    private void addDummyService(List<Service> serviceList) {
+        Service dummyService = new Service();
+        dummyService.setId(0);
+        dummyService.setName("No service exist");
+        dummyService.setDescription("Please add your services");
+        serviceList.add(dummyService);
     }
 }
