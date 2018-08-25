@@ -39,17 +39,19 @@ public class ServiceDetailsFragment extends Fragment {
         serviceActivity = ((ServiceActivity) getActivity());
         Service service = serviceActivity.service;
 
-        serviceNameTextView = rootView.findViewById(R.id.serviceNameTextView);
-        serviceRatingTextView = rootView.findViewById(R.id.serviceRatingTextView);
-        serviceDescriptionTextView = rootView.findViewById(R.id.serviceDescriptionTextView);
-        serviceTagsTextView = rootView.findViewById(R.id.serviceTagsTextView);
-        serviceLocationTextView = rootView.findViewById(R.id.serviceLocationTextView);
+        if (service != null) {
+            serviceNameTextView = rootView.findViewById(R.id.serviceNameTextView);
+            serviceRatingTextView = rootView.findViewById(R.id.serviceRatingTextView);
+            serviceDescriptionTextView = rootView.findViewById(R.id.serviceDescriptionTextView);
+            serviceTagsTextView = rootView.findViewById(R.id.serviceTagsTextView);
+            serviceLocationTextView = rootView.findViewById(R.id.serviceLocationTextView);
 
-        serviceNameTextView.setText(service.getName());
-        serviceDescriptionTextView.setText(service.getDescription());
-        serviceTagsTextView.setText(service.getTags());
-        serviceRatingTextView.setText(String.valueOf(service.getRating()));
-        serviceLocationTextView.setText(service.getLocation());
+            serviceNameTextView.setText(service.getName());
+            serviceDescriptionTextView.setText(service.getDescription());
+            serviceTagsTextView.setText(service.getTags());
+            serviceRatingTextView.setText(String.valueOf(service.getRating()));
+            serviceLocationTextView.setText(service.getLocation());
+        }
 
         return rootView;
     }

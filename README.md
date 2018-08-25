@@ -20,3 +20,4 @@ services. These services then can be searched by seekers in their nearby locatio
 | --- | --- |
 |![MainActivity](./screenshots/main-activity.png) | ![NavigationDrawer](./screenshots/navigation-drawer.png)|
 |![SearchActivity](./screenshots/search-activity.png) | ![Login](./screenshots/login.png)|
+|![Add Service](./screenshots/add-service.png) | ![Service Details](./screenshots/service-details.png)|
