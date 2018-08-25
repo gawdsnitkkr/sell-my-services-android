@@ -1,6 +1,7 @@
 package me.varunon9.sellmyservices;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -202,9 +203,10 @@ public class ServiceActivity extends AppCompatActivity {
                         serviceService.createService(service);
 
                         // switching to serviceDetails view which will display newly created service
-                        mViewPager.setCurrentItem(SERVICE_DETAILS_TAB);
+                        //mViewPager.setCurrentItem(SERVICE_DETAILS_TAB);
+                        //showMessage("Service added successfully");
 
-                        showMessage("Service added successfully");
+                        goToUiFragmentActivity(); // bad idea to switch?
                     } catch (Exception e) {
                         e.printStackTrace();
                         showMessage("Parsing error");
@@ -256,9 +258,10 @@ public class ServiceActivity extends AppCompatActivity {
                         serviceService.updateService(service);
 
                         // switching to serviceDetails view which will display newly created service
-                        mViewPager.setCurrentItem(SERVICE_DETAILS_TAB);
+                        //mViewPager.setCurrentItem(SERVICE_DETAILS_TAB);
+                        //showMessage("Service updated successfully");
 
-                        showMessage("Service updated successfully");
+                        goToUiFragmentActivity(); // bad idea to switch?
                     } catch (Exception e) {
                         e.printStackTrace();
                         showMessage("Parsing error");
@@ -301,5 +304,16 @@ public class ServiceActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return service;
+    }
+
+    private void goToUiFragmentActivity() {
+        Intent intent = new Intent(ServiceActivity.this, UiFragmentActivity.class);
+        Bundle args = new Bundle();
+        args.putInt(AppConstants.NAVIGATION_ITEM, R.id.navSellerServices);
+
+        // clear history stack so that back button does no lead to ServiceActivity
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtras(args);
+        startActivity(intent);
     }
 }
