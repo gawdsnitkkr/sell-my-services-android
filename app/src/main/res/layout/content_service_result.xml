@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ServiceResultActivity"
+    tools:showIn="@layout/activity_service_result">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/serviceDescriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_margin="@dimen/activity_horizontal_margin" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:textAllCaps="true"
+            android:drawableLeft="@drawable/ic_action_location"
+            android:text="Location"
+            android:shadowColor="#666060"
+            android:shadowRadius="2"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:drawablePadding="10dip"
+            android:singleLine="true"
+            android:gravity="fill"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/serviceLocationTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_margin="@dimen/activity_horizontal_margin" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:textAllCaps="true"
+            android:drawableLeft="@drawable/ic_action_tags"
+            android:text="Tags"
+            android:shadowColor="#666060"
+            android:shadowRadius="2"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:drawablePadding="10dip"
+            android:singleLine="true"
+            android:gravity="fill"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/serviceTagsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_margin="@dimen/activity_horizontal_margin" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:textAllCaps="true"
+                android:drawableLeft="@drawable/ic_action_ratings"
+                android:text="Rating"
+                android:shadowColor="#666060"
+                android:shadowRadius="2"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:drawablePadding="10dip"
+                android:singleLine="true"
+                android:gravity="fill"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/serviceRatingTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_margin="@dimen/activity_horizontal_margin" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:textAllCaps="true"
+                android:drawableLeft="@drawable/ic_action_seller"
+                android:text="Seller"
+                android:shadowColor="#666060"
+                android:shadowRadius="2"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:drawablePadding="10dip"
+                android:singleLine="true"
+                android:gravity="fill"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/sellerNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_margin="@dimen/activity_horizontal_margin" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:textAllCaps="true"
+            android:drawableLeft="@drawable/ic_action_email"
+            android:text="Email"
+            android:shadowColor="#666060"
+            android:shadowRadius="2"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:drawablePadding="10dip"
+            android:singleLine="true"
+            android:gravity="fill"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/sellerEmailTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_margin="@dimen/activity_horizontal_margin" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:textAllCaps="true"
+                android:drawableLeft="@drawable/ic_action_mobile"
+                android:text="Mobile"
+                android:shadowColor="#666060"
+                android:shadowRadius="2"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:drawablePadding="10dip"
+                android:singleLine="true"
+                android:gravity="fill"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/sellerMobileTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_margin="@dimen/activity_horizontal_margin" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

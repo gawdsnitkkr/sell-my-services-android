@@ -256,10 +256,11 @@ public class MainActivity extends AppCompatActivity implements
                     String serviceName = service.getString("name");
                     LatLng sellerLatlng = new LatLng(latitude, longitude);
                     JSONObject seller = service.getJSONObject("user");
-                    mMap.addMarker(new MarkerOptions().position(sellerLatlng)
+                    Marker marker = mMap.addMarker(new MarkerOptions().position(sellerLatlng)
                             .title(seller.getString("firstName"))
                             .snippet(serviceName)
                             .icon(BitmapDescriptorFactory.fromResource(R.drawable.search_text_icon)));
+                    marker.setTag(service);
 
                     // animate in last
                     if (i == (services.length() - 1)) {
@@ -275,6 +276,13 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public boolean onMarkerClick(Marker marker) {
         Log.d(TAG, marker.getTitle() + " clicked");
+        JSONObject serviceObject = (JSONObject) marker.getTag();
+        if (serviceObject != null) {
+            // go to ServiceResultActivity and populate clicked service result
+            Intent intent = new Intent(MainActivity.this, ServiceResultActivity.class);
+            intent.putExtra("service", serviceObject.toString());
+            startActivity(intent);
+        }
         return false;
     }
 

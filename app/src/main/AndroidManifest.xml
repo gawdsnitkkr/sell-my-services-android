@@ -52,6 +52,10 @@
         <activity
             android:name=".ServiceActivity"
             android:label="@string/title_activity_service"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ServiceResultActivity"
+            android:label="@string/title_activity_service_result"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

@@ -12,7 +12,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -175,7 +174,7 @@ public class ServiceActivity extends AppCompatActivity {
     }
 
     public void showMessage(String message) {
-        View parentLayout = findViewById(R.id.ServiceActivityContent);
+        View parentLayout = findViewById(R.id.serviceActivityContent);
         Snackbar.make(parentLayout, message, Snackbar.LENGTH_LONG).show();
     }
 
