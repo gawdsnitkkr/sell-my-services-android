@@ -135,6 +135,12 @@ public class SearchActivity extends AppCompatActivity {
         try {
             JSONObject body = new JSONObject();
             Location location = singleton.getCurrentLocation();
+            if (location == null) {
+                // if for some reason location is null, set to Bangalore
+                location = new Location("");
+                location.setLatitude(12.97);
+                location.setLongitude(77.6);
+            }
             String url = String.format(Urls.SEARCH_SERVICES
                     + "?latitude=%f&longitude=%f&searchText=%s",
                         location.getLatitude(), location.getLongitude(), searchText);

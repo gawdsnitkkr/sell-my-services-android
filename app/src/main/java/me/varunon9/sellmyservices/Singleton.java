@@ -13,6 +13,8 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONObject;
 
 import me.varunon9.sellmyservices.constants.AppConstants;
+import me.varunon9.sellmyservices.db.DbHelper;
+import me.varunon9.sellmyservices.db.services.ServiceService;
 
 /**
  * Created by varunkumar on 24/7/18.
@@ -28,6 +30,7 @@ public class Singleton {
     private JSONObject profileDetails;
     private String PROFILE_DETAILS = "profileDetails";
     private String TAG = "Singleton";
+    private DbHelper dbHelper;
 
     // this will be called only one time to sync server database to SQLite
     private boolean fetchServicesFromServer = true;
@@ -35,6 +38,7 @@ public class Singleton {
     private Singleton(Context context) {
         this.context = context;
         requestQueue = getRequestQueue();
+        dbHelper = new DbHelper(context);
     }
 
     public static synchronized Singleton getInstance(Context context) {
@@ -142,8 +146,14 @@ public class Singleton {
         editor = sharedPreferences.edit();
         editor.clear().commit();
 
+        // clearing services data from SQLite
+        ServiceService serviceService = new ServiceService(dbHelper);
+        serviceService.removeAllServices();
+
         this.loginDetails = null;
         this.profileDetails = null;
+
+        fetchServicesFromServer = true; // to re-sync from server
     }
 
     private SharedPreferences getLoginSharedPreferences() {
