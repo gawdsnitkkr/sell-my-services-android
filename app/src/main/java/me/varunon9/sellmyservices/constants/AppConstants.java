@@ -31,8 +31,8 @@ public final class AppConstants {
         private Urls() {
         }
 
-        private static final String DOMAIN = "http://192.168.43.147:4000";
-        //private static final String DOMAIN = "https://sellmyservices.in";
+        //private static final String DOMAIN = "http://192.168.43.147:4000";
+        private static final String DOMAIN = "https://sellmyservices.in";
         public static final String SEARCH_SERVICES =
                 DOMAIN + "/search/services/";
         public static final String GOOGLE_TOKEN_SIGNIN =

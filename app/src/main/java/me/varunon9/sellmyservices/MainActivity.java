@@ -37,6 +37,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import me.varunon9.sellmyservices.constants.AppConstants;
 import me.varunon9.sellmyservices.utils.ContextUtility;
 
@@ -51,6 +54,18 @@ public class MainActivity extends AppCompatActivity implements
     private static final String TAG = "MainActivity";
     private Singleton singleton;
     private boolean doubleBackToExitPressedOnce = false;
+
+    /**
+     * If two services have exact same latitude and longitude then displaying them
+     * on map hide others, i.i. only one of them is visible
+     * as a workaround, modifying latitude a bit on map
+     *
+     * latitudeHashMap will contain unique latitudes with corresponding offset
+     * each time a latitude is encountered already in hashMap, offset will be increased
+     */
+    private final double COORDINATE_OFFSET = 0.003;
+    private HashMap<Double, Double> latitudeHashMap = new HashMap<>();
+    private HashMap<Double, Double> longitudeHashMap = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -252,11 +267,14 @@ public class MainActivity extends AppCompatActivity implements
                 for (int i = 0; i < services.length(); i++) {
                     JSONObject service = services.getJSONObject(i);
                     double latitude = service.getDouble("latitude");
+                    latitude = getUniqueLatitude(latitude);
                     double longitude = service.getDouble("longitude");
+                    longitude = getUniqueLongitude(longitude);
                     String serviceName = service.getString("name");
-                    LatLng sellerLatlng = new LatLng(latitude, longitude);
+                    LatLng serviceLatLng = new LatLng(latitude, longitude);
                     JSONObject seller = service.getJSONObject("user");
-                    Marker marker = mMap.addMarker(new MarkerOptions().position(sellerLatlng)
+                    Log.d(TAG, serviceName + ", " + latitude + ", " + longitude);
+                    Marker marker = mMap.addMarker(new MarkerOptions().position(serviceLatLng)
                             .title(seller.getString("firstName"))
                             .snippet(serviceName)
                             .icon(BitmapDescriptorFactory.fromResource(R.drawable.search_text_icon)));
@@ -264,7 +282,8 @@ public class MainActivity extends AppCompatActivity implements
 
                     // animate in last
                     if (i == (services.length() - 1)) {
-                        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sellerLatlng, 10));
+                        // todo set zoom level based on how dispersed locations are
+                        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(serviceLatLng, 12));
                     }
                 }
             }
@@ -359,5 +378,33 @@ public class MainActivity extends AppCompatActivity implements
     private void showMessage(String message) {
         View parentLayout = findViewById(R.id.mainActivityContent);
         Snackbar.make(parentLayout, message, Snackbar.LENGTH_LONG).show();
+    }
+
+    private double getUniqueLatitude(double latitude) {
+        double modifiedLatitude;
+        if (latitudeHashMap.containsKey(latitude)) {
+            double offsetValue = latitudeHashMap.get(latitude);
+            modifiedLatitude = latitude + offsetValue;
+            offsetValue += offsetValue; // updating offset for future latitudes
+            latitudeHashMap.put(latitude, offsetValue);
+        } else {
+            latitudeHashMap.put(latitude, COORDINATE_OFFSET);
+            modifiedLatitude = latitude;
+        }
+        return modifiedLatitude;
+    }
+
+    private double getUniqueLongitude(double longitude) {
+        double modifiedLongitude;
+        if (longitudeHashMap.containsKey(longitude)) {
+            double offsetValue = longitudeHashMap.get(longitude);
+            modifiedLongitude = longitude + offsetValue;
+            offsetValue += offsetValue; // updating offset for future longitude
+            longitudeHashMap.put(longitude, offsetValue);
+        } else {
+            longitudeHashMap.put(longitude, COORDINATE_OFFSET);
+            modifiedLongitude = longitude;
+        }
+        return modifiedLongitude;
     }
 }
