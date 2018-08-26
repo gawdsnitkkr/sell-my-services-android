@@ -27,3 +27,6 @@ https://github.com/gawdsnitkkr/sell-my-services-backend/
 |![MainActivity](./screenshots/main-activity.png) | ![NavigationDrawer](./screenshots/navigation-drawer.png)|
 |![SearchActivity](./screenshots/search-activity.png) | ![Login](./screenshots/login.png)|
 |![Add Service](./screenshots/add-service.png) | ![Service Details](./screenshots/service-details.png)|
+
+#### Demo video-
+https://youtu.be/cio7xAiRjGE
