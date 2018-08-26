@@ -3,6 +3,12 @@
 We help people to offer their services to others easily and quickly. SellMyServices is a platform where a seller can publish his
 services. These services then can be searched by seekers in their nearby locations. 
 
+### Android app link
+[![Android App](./screenshots/google-play.png)](https://play.google.com/store/apps/details?id=me.varunon9.sellmyservices)
+
+#### Backend Repository
+https://github.com/gawdsnitkkr/sell-my-services-backend/
+
 #### How does it work?
 
 1. A seller is a person who offers some service e.g. Photographer, Carpenter, Cook, Teacher, Doctor, Freelancer etc.
